@@ -1,5 +1,5 @@
 <!-- image is screenshot of online article  -->
-# [Malishev M & Civitello DJ (Modelling mollusciciding frequency and intensity under resource competition among snail hosts for human schistosome control     
+# Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes      
 
 Versions:  
  - R 3.5.0  
