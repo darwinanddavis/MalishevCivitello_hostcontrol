@@ -1,5 +1,5 @@
 ---
-title: Appendix A for Malishev, M & Civitello, DJ Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes
+title: S1 Appendix for Malishev, M & Civitello, DJ Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes
 #bibliography:/Users/malishev/Documents/Melbourne Uni/Thesis_2016/library.bib
 fontsize: 10
 geometry: margin=1in
