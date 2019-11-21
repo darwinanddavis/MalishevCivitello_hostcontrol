@@ -1,5 +1,12 @@
 <!-- image is screenshot of online article  -->
-# Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes      
+# Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes   
+
+## Matthew Malishev<sup>1*</sup> & David J Civitello<sup>1</sup>     
+
+### _<sup>1</sup> Department of Biology, Emory University, 1510 Clifton Road NE, Atlanta, GA, USA, 30322_      
+
+#### *Corresponding author: matthew.malishev [at] gmail.com        
+
 
 Versions:  
  - R 3.5.0  
@@ -12,6 +19,7 @@ File extensions:
 .R  
 .nlogo  
 .c  
+.dll  
 .pdf  
 .html  
 
@@ -19,7 +27,7 @@ File extensions:
 
 ## Abstract    
 
-Schistosomiasis is a major, yet historically neglected tropical disease. Ongoing efforts aimed at eliminating schistosomiasis morbidity, disrupting transmission, and eradicating human infections have recently focused on supplementing mass chemotherapy for humans with snail control programs. Snail control, such as via mollusciciding, often varies wildly in frequency or intensity, with variable success. We use individual-based models (IBMs) based on general metabolic theory, Dynamic Energy Budget (DEB) theory, to simulate human-infectious schistosome density under a range of molluscicide scenarios varying in frequency and intensity throughout a 150-day transmission season. Without molluscicide control, our DEB-IBM predicts intense host resource competition and a large parasite peak early in the season for snail populations consuming algae or detritus resources. In contrast, one-off, intense, and early mollusciciding may be risky because it induces delayed rebounds in cercarial density by releasing the few remaining snails from competition for food. Consistent monthly control is the most effective, but only if intense, i.e. >50%–90% host mortality rate. These simulations confirm the existing view that frequent mollusciciding can effectively disrupt schistosome transmission to humans. However, they challenge the utility of infrequent and weak mollusciciding, e.g. an annual regime, and suggest a specific mechanism results in this failure, namely resource competition among hosts driving parasite emergence. Our results show how host-parasite resource ecology can identify critical parasite peaks and the potential risks of some control strategies by generating specific, testable predictions. Further, we suggest field estimates of snail reproduction could predict impending peaks of cercariae release. Combined, we highlight the usefulness of bioenergetics models in not only scaling from the individual to population, but parsing the timing and intensity of practical control strategies against human-infectious schistosomes for mediating unintended consequences for human health.    
+Schistosomiasis is a major, yet historically neglected tropical disease. Ongoing efforts aimed at eliminating schistosomiasis morbidity, disrupting transmission, and eradicating human infections have recently refocused on supplementing mass chemotherapy for humans with snail control programs. Snail control, such as mollusciciding, often varies wildly in frequency or intensity, with variable success. We used individual-based models (IBMs) based on general metabolic theory, Dynamic Energy Budget (DEB) theory, to simulate human-infectious schistosome density under a range of molluscicide scenarios varying in frequency and intensity throughout a typical 150-day transmission season. Without molluscicide control, our DEB-IBM predicts intense resource competition among snail hosts and a large parasite peak early in the season for snail populations consuming algae or detritus. Consistent monthly control, as recommended by the WHO, can work, but only if intense, i.e. > 90% host mortality rate. In contrast, one-off, intense, and early mollusciciding induces large delayed rebounds in cercariae density by releasing the few remaining snails from resource competition. Our simulations confirm the WHO recommendation that frequent mollusciciding can disrupt schistosome transmission to humans. However, they contradict recent alternatives of infrequent mollusciciding, e.g. annually, by suggesting this strategy can backfire due to a specific mechanism, namely resource competition among hosts limits parasite emergence. Our model results show how host-parasite resource ecology can identify critical parasite peaks and the potential risks of current control strategies by generating testable predictions. In the field, we suggest snail reproduction could predict impending peaks of cercariae release. Combined, we illustrate scaling individuals to populations using bioenergetics models can parse the timing and intensity of practical control strategies against human-infectious schistosomes to mediate unintended consequences for human health.    
 
 ## Maintainer    
 **Matt Malishev**     
