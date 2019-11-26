@@ -1,6 +1,5 @@
 ---
-title: S1 Appendix for Malishev, M & Civitello, DJ Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes
-#bibliography:/Users/malishev/Documents/Melbourne Uni/Thesis_2016/library.bib
+title: Supplementary Information for Malishev, M & Civitello, DJ Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes
 fontsize: 10
 geometry: margin=1in
 documentclass: article
@@ -48,13 +47,8 @@ params:
   session: !r sessionInfo()  
   version: !r getRversion()
   email: "matthew.malishev@gmail.com"
-  doi: https://github.com/darwinanddavis/MalishevCivitello_plosone
+  doi: https://github.com/darwinanddavis/MalishevCivitello_hostcontrol
 classoption: portrait
-# ^['https://github.com/darwinanddavis/UsefulCode'] # footnote
-vignette: >
-  %\VignetteIndexEntry{Useful R code}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 <script type="text/x-mathjax-config">
@@ -76,7 +70,7 @@ Complete model code for the _Schistosome_ Individual Dynamic Energy Budget (SIDE
 \  
 \  
 
-All model code is found at [https://github.com/darwinanddavis/MalishevCivitello_plosone](https://github.com/darwinanddavis/MalishevCivitello_plosone).  
+All model code is found at [`r params$doi`](`r params$doi`).    
 
 \  
 \  
