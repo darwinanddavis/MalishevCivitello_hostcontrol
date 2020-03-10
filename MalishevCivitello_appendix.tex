@@ -1,0 +1,938 @@
+\documentclass[10,portrait]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{
+            pdftitle={Appendix for Malishev, M \& Civitello, DJ Modelling mollusciciding frequency and intensity under resource competition among snail hosts for human schistosome control},
+            colorlinks=true,
+            linkcolor=blue,
+            citecolor=red,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage[]{biblatex}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Appendix for Malishev, M \& Civitello, DJ Modelling mollusciciding
+frequency and intensity under resource competition among snail hosts for
+human schistosome control}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{\texorpdfstring{Simulation code for the \emph{Schistosome}
+Individual Dynamic Energy Budget (SIDEB) model for host-parasite
+transmission under varying snail control
+programs.}{Simulation code for the Schistosome Individual Dynamic Energy Budget (SIDEB) model for host-parasite transmission under varying snail control programs.}}\label{simulation-code-for-the-schistosome-individual-dynamic-energy-budget-sideb-model-for-host-parasite-transmission-under-varying-snail-control-programs.}
+
+~ ~
+
+All model code is found at
+\url{https://github.com/darwinanddavis/MalishevCivitello_plosone}.
+
+~ ~
+
+Required files
+
+~ ~
+
+\begin{verbatim}
+"DEB_IBM.R"
+"DEB_INF_GUTS_IBM.nlogo"
+"FullStarve_shrink_dilute_damage3.Rda"
+"Starvation_parameters.Rda"  
+"IndividualModel_IBM3.c"
+"IndividualModel_IBM3.so" # Mac OSX. generated from C
+"IndividualModel_IBM3.o" # Mac OSX. generated from C  
+"IndividualModel_IBM.dll" # Windows. generated from C  
+\end{verbatim}
+
+~ ~
+
+\subsubsection{Individual-based simulation model for varying
+mollusciciding frequency and
+intensity.}\label{individual-based-simulation-model-for-varying-mollusciciding-frequency-and-intensity.}
+
+~ ~
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# version 1.5 (31-8-19)}
+\CommentTok{# new yRP, new DEB params from starvation exp, nocontrol event}
+\CommentTok{# DEB_INF_GUTS_IBM_1.1.nlogo with user-defined create-snails}
+\CommentTok{# IndividualModel_IBM3.c (generates .o and .so files)  }
+\CommentTok{# FullStarve_shrink_dilute_damage3.Rd}
+
+\NormalTok{### Files required  }
+\CommentTok{# "DEB_IBM.R"}
+\CommentTok{# "DEB_INF_GUTS_IBM.nlogo"}
+\CommentTok{# "Starvation_parameters.Rda"}
+\CommentTok{# "FullStarve_shrink_dilute_damage3.Rda"}
+\CommentTok{# "IndividualModel_IBM3.c"}
+\CommentTok{# "IndividualModel_IBM3.so" # Mac OSX. generated from C}
+\CommentTok{# "IndividualModel_IBM3.o" # Mac OSX. generated from C  }
+\CommentTok{# "IndividualModel_IBM.dll" # Windows. generated from C   }
+
+\NormalTok{####################################  set user inputs ####################################### }
+\CommentTok{# isolate sensitive data:}
+\CommentTok{# "FullStarve_shrink_dilute_damage3.Rda"}
+
+\CommentTok{# set user outputs}
+\NormalTok{mac <-}\StringTok{ }\DecValTok{1} \CommentTok{# mac or windows system? 1 = mac, 0 = windows }
+\NormalTok{gui <-}\StringTok{ }\DecValTok{0} \CommentTok{# display the gui? 1 = yes, 0 = no. set to 0 if using Mac}
+\NormalTok{pck <-}\StringTok{ }\DecValTok{0} \CommentTok{# if not already, install rnetlogo and rjava from source? 1 = yes, 0 = already installed }
+\NormalTok{save_to_file <-}\StringTok{ }\DecValTok{0} \CommentTok{# 1 = save simulation outputs to local dir, 0 = plot in current R session}
+\NormalTok{mcmcplot <-}\StringTok{ }\DecValTok{0} \CommentTok{# 1 = save mcmc plots to dir}
+\NormalTok{traceplot <-}\StringTok{ }\DecValTok{0} \CommentTok{# 1 = include traceplot in mcmc plots? intensive!!!}
+
+\CommentTok{# set dir paths (for "/" for both Windows and Mac)}
+\NormalTok{  wd <-}\StringTok{ "<working directory>"} \CommentTok{# set working directory  }
+\NormalTok{  ver_nl <-}\StringTok{"6.0.4"} \CommentTok{# type in Netlogo version. found in local dir. }
+\NormalTok{  ver_gcc <-}\StringTok{"4.6.3"} \CommentTok{# NULL # type in gcc version (if known). leave as "NULL" if unknown   }
+\NormalTok{  nl.path <-}\StringTok{ "<path to Netlogo program location>"} \CommentTok{# set path to Netlogo program location}
+
+\CommentTok{# define starting conditions for simulation model @netlogo}
+\NormalTok{n.ticks <-}\StringTok{ }\DecValTok{150} \CommentTok{# set number of days to simulate}
+\NormalTok{day <-}\StringTok{ }\DecValTok{1} \CommentTok{# number of days to run simulation  }
+\NormalTok{resources <-}\StringTok{ "event"} \CommentTok{# set resources: "cyclical" or "event"}
+
+\NormalTok{####################################  set model paths #######################################}
+\CommentTok{# load files}
+\NormalTok{deb_samps <-}\StringTok{ "FullStarve_shrink_dilute_damage3.Rda"} \CommentTok{# old param estimates (15-7-19)}
+\NormalTok{deb_samps_new <-}\StringTok{"Starvation_parameters.Rda"}
+\NormalTok{deb_compile <-}\StringTok{ "IndividualModel_IBM3"}
+\KeywordTok{setwd}\NormalTok{(wd)}
+
+\NormalTok{nl.model <-}\StringTok{ }\KeywordTok{list.files}\NormalTok{(}\DataTypeTok{pattern=}\StringTok{"*1.1.nlogo"}\NormalTok{) ;nl.model }\CommentTok{# Netlogo model}
+\ControlFlowTok{if}\NormalTok{(mac}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{  nl.path <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(nl.path,}\StringTok{"/NetLogo "}\NormalTok{,ver_nl,}\StringTok{"/Java/"}\NormalTok{); }\KeywordTok{cat}\NormalTok{(}\StringTok{"Mac path:"}\NormalTok{,nl.path)}
+\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{}
+\NormalTok{  nl.path <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(nl.path,}\StringTok{"/NetLogo "}\NormalTok{,ver_nl,}\StringTok{"/app/"}\NormalTok{); }\KeywordTok{cat}\NormalTok{(}\StringTok{"Windows path:"}\NormalTok{,nl.path)}
+\NormalTok{\}}
+\NormalTok{model.path <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/"}\NormalTok{); model.path }\CommentTok{# set path to Netlogo model   }
+
+\NormalTok{####################################  load packages #######################################}
+\CommentTok{# if already loaded, uninstall RNetlogo and rJava}
+\ControlFlowTok{if}\NormalTok{(pck}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{  p<-}\KeywordTok{c}\NormalTok{(}\StringTok{"rJava"}\NormalTok{, }\StringTok{"RNetLogo"}\NormalTok{); }\KeywordTok{remove.packages}\NormalTok{(p)}
+  \CommentTok{# then install rJava and RNetLogo from source}
+  \ControlFlowTok{if}\NormalTok{(mac}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"rJava"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.r-project.org/"}\NormalTok{, }\DataTypeTok{type=}\StringTok{"source"}\NormalTok{); }\KeywordTok{library}\NormalTok{(rJava)}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"RNetLogo"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.r-project.org/"}\NormalTok{, }\DataTypeTok{type=}\StringTok{"source"}\NormalTok{); }\KeywordTok{library}\NormalTok{(RNetLogo)}
+\NormalTok{  \}}
+  
+  \KeywordTok{require}\NormalTok{(RNetLogo)}
+  \KeywordTok{require}\NormalTok{(rJava)}
+  
+  \CommentTok{# check pck versions}
+  \KeywordTok{installed.packages}\NormalTok{()[}\StringTok{"RNetLogo"}\NormalTok{,}\StringTok{"Version"}\NormalTok{] }
+  \KeywordTok{installed.packages}\NormalTok{()[}\StringTok{"rJava"}\NormalTok{,}\StringTok{"Version"}\NormalTok{]}
+  
+  \CommentTok{# install relevant packages   }
+\NormalTok{  packages <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Matrix"}\NormalTok{,}\StringTok{"deSolve"}\NormalTok{,}\StringTok{"mvtnorm"}\NormalTok{,}\StringTok{"LaplacesDemon"}\NormalTok{,}\StringTok{"coda"}\NormalTok{,}\StringTok{"adaptMCMC"}\NormalTok{,}\StringTok{"sp"}\NormalTok{,}\StringTok{"RNetLogo"}\NormalTok{,}\StringTok{"ggplot2"}\NormalTok{,}\StringTok{"RCurl"}\NormalTok{,}\StringTok{"RColorBrewer"}\NormalTok{,}\StringTok{"Interpol.T"}\NormalTok{,}\StringTok{"lubridate"}\NormalTok{,}\StringTok{"ggExtra"}\NormalTok{,}\StringTok{"tidyr"}\NormalTok{,}\StringTok{"ggthemes"}\NormalTok{,}\StringTok{"reshape2"}\NormalTok{,}\StringTok{"pse"}\NormalTok{,}\StringTok{"sensitivity"}\NormalTok{,}\StringTok{"beepr"}\NormalTok{)  }
+  \ControlFlowTok{if}\NormalTok{(}\KeywordTok{require}\NormalTok{(packages))\{}
+    \KeywordTok{install.packages}\NormalTok{(packages,}\DataTypeTok{dependencies =}\NormalTok{ T)}
+\NormalTok{  \}}
+  \CommentTok{# load annoying packages manually because they're stubborn }
+  
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"RNetLogo"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"RCurl"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"Interpol.T"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"lubridate"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"tidyr"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"ggthemes"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"ggExtra"}\NormalTok{)}
+  \KeywordTok{install.packages}\NormalTok{(}\StringTok{"beepr"}\NormalTok{)}
+  
+\NormalTok{\}}
+\NormalTok{ppp <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(packages,require,}\DataTypeTok{character.only=}\NormalTok{T)}
+\ControlFlowTok{if}\NormalTok{(}\KeywordTok{any}\NormalTok{(ppp}\OperatorTok{==}\NormalTok{F))\{}\KeywordTok{cbind}\NormalTok{(packages,ppp);}\KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n\textbackslash{}n\textbackslash{}n}\StringTok{ ---> Check packages are loaded properly <--- }\CharTok{\textbackslash{}n\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)\}}
+
+\NormalTok{cs <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# diagnostics list for checking NAs in create snails command  }
+
+\CommentTok{# load plot function }
+\NormalTok{script <-}\StringTok{ }\KeywordTok{getURL}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/darwinanddavis/plot_it/master/plot_it.R"}\NormalTok{, }\DataTypeTok{ssl.verifypeer =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{eval}\NormalTok{(}\KeywordTok{parse}\NormalTok{(}\DataTypeTok{text =}\NormalTok{ script))}
+\KeywordTok{display.brewer.all}\NormalTok{()}
+\CommentTok{# Set global plotting parameters}
+\KeywordTok{cat}\NormalTok{(}\StringTok{"plot_it( }\CharTok{\textbackslash{}n}\StringTok{0 for presentation, 1 for manuscript, }\CharTok{\textbackslash{}n}\StringTok{set colour for background, }\CharTok{\textbackslash{}n}\StringTok{set colour palette 1. use 'display.brewer.all()', }\CharTok{\textbackslash{}n}\StringTok{set colour palette 2. use 'display.brewer.all()', }\CharTok{\textbackslash{}n}\StringTok{set alpha for colour transperancy, }\CharTok{\textbackslash{}n}\StringTok{set font style }\CharTok{\textbackslash{}n}\StringTok{)"}\NormalTok{)}
+\KeywordTok{plot_it}\NormalTok{(}\DecValTok{1}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"YlOrRd"}\NormalTok{,}\StringTok{"Greens"}\NormalTok{,}\DecValTok{1}\NormalTok{,}\StringTok{"mono"}\NormalTok{) }\CommentTok{# set plot function params       }
+\KeywordTok{plot_it_gg}\NormalTok{(}\StringTok{"white"}\NormalTok{) }\CommentTok{# same as above for ggplot     }
+
+\CommentTok{# load harwell script}
+\NormalTok{script <-}\StringTok{ }\KeywordTok{getURL}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/darwinanddavis/harwell/master/harwell.R"}\NormalTok{, }\DataTypeTok{ssl.verifypeer =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{eval}\NormalTok{(}\KeywordTok{parse}\NormalTok{(}\DataTypeTok{text =}\NormalTok{ script))}
+\NormalTok{################################  compile packages and load files ###################################}
+
+\NormalTok{### Install rtools and gcc for using C code and coda package }
+\NormalTok{#### https://cran.r-project.org/bin/macosx/tools/}
+
+\CommentTok{# define paths for gcc compiler }
+\ControlFlowTok{if}\NormalTok{(mac}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{ #### Mac OSX}
+\NormalTok{  rtools <-}\StringTok{ "/usr/local/clang6/bin"}
+\NormalTok{  gcc <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"usr/local/clang6/gcc-"}\NormalTok{,ver_gcc,}\StringTok{"/bin"}\NormalTok{)}
+  \CommentTok{# Mac OSX}
+\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{ #### Windows }
+\NormalTok{  rtools <-}\StringTok{ "C:}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Rtools}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{bin"}
+\NormalTok{  gcc <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"C:}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{Rtools}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{gcc-"}\NormalTok{,ver_gcc,}\StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{bin"}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{#### point to path on comp to access rtools and gcc for C compiler  }
+\NormalTok{path <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(}\KeywordTok{Sys.getenv}\NormalTok{(}\StringTok{"PATH"}\NormalTok{), }\StringTok{";"}\NormalTok{)[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{new_path <-}\StringTok{ }\KeywordTok{c}\NormalTok{(rtools, gcc, path)}
+\NormalTok{new_path <-}\StringTok{ }\NormalTok{new_path[}\OperatorTok{!}\KeywordTok{duplicated}\NormalTok{(}\KeywordTok{tolower}\NormalTok{(new_path))]}
+\KeywordTok{Sys.setenv}\NormalTok{(}\DataTypeTok{PATH =} \KeywordTok{paste}\NormalTok{(new_path, }\DataTypeTok{collapse =} \StringTok{";"}\NormalTok{))}
+
+\ControlFlowTok{if}\NormalTok{(mac}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+  \CommentTok{# dyn.unload("IndividualModel_IBM3.so") # unLoad .so (Mac OSX}
+  \KeywordTok{system}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"R CMD SHLIB "}\NormalTok{,deb_compile,}\StringTok{".c"}\NormalTok{)) }\CommentTok{# generates .o and .so files }
+  \KeywordTok{dyn.load}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(deb_compile,}\StringTok{".so"}\NormalTok{)) }\CommentTok{# Load .so (Mac OSX)}
+\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{}
+  \CommentTok{# compile model from C definition}
+  \CommentTok{# dyn.unload(paste0(deb_compile,".dll")) # unload dll (Windows only)}
+  \KeywordTok{system}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"R CMD SHLIB "}\NormalTok{,deb_compile,}\StringTok{".c"}\NormalTok{))}
+  \KeywordTok{dyn.load}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(deb_compile,}\StringTok{".dll"}\NormalTok{))}\CommentTok{# Load dll (Windows only)}
+\NormalTok{\}}
+
+\NormalTok{####################################  load deb params #######################################}
+\CommentTok{# load DEB starvation model parameters and create mcmc (and convert mcmc chain to coda format)}
+\CommentTok{# old starvation param estimates (use gammaH, gammaP, and lpost to add to new samps)}
+\NormalTok{samps =}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(deb_samps)}
+\NormalTok{samps <-}\StringTok{ }\KeywordTok{as.mcmc}\NormalTok{(samps[, }\KeywordTok{c}\NormalTok{(}\StringTok{"iM"}\NormalTok{, }\StringTok{"k"}\NormalTok{, }\StringTok{"M"}\NormalTok{, }\StringTok{"EM"}\NormalTok{, }\StringTok{"Fh"}\NormalTok{, }\StringTok{"muD"}\NormalTok{, }\StringTok{"DR"}\NormalTok{, }\StringTok{"fe"}\NormalTok{, }\StringTok{"yRP"}\NormalTok{,}
+                           \StringTok{"ph"}\NormalTok{, }\StringTok{"yPE"}\NormalTok{, }\StringTok{"iPM"}\NormalTok{, }\StringTok{"eh"}\NormalTok{, }\StringTok{"mP"}\NormalTok{, }\StringTok{"alpha"}\NormalTok{, }\StringTok{"yEF"}\NormalTok{, }\StringTok{"LM"}\NormalTok{,}
+                           \StringTok{"kd"}\NormalTok{, }\StringTok{"z"}\NormalTok{, }\StringTok{"kk"}\NormalTok{, }\StringTok{"hb"}\NormalTok{, }\StringTok{"theta"}\NormalTok{, }\StringTok{"mR"}\NormalTok{, }\StringTok{"yVE"}\NormalTok{, }\StringTok{"yEF2"}\NormalTok{,}
+                           \StringTok{"sd.LI1"}\NormalTok{, }\StringTok{"sd.LU1"}\NormalTok{, }\StringTok{"sd.EI1"}\NormalTok{, }\StringTok{"sd.EU1"}\NormalTok{, }\StringTok{"sd.W1"}\NormalTok{,  }\StringTok{"sd.LI2"}\NormalTok{,}
+                           \StringTok{"sd.LU2"}\NormalTok{, }\StringTok{"sd.EI2"}\NormalTok{, }\StringTok{"sd.EU2"}\NormalTok{, }\StringTok{"sd.W2"}\NormalTok{, }\StringTok{"gammaH"}\NormalTok{, }\StringTok{"gammaP"}\NormalTok{, }\StringTok{"lpost"}\NormalTok{)])}
+\NormalTok{samps_new =}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(deb_samps_new) }\CommentTok{# new starvation param estimates (15-7-19)}
+
+\CommentTok{# ---------- summarise and plot estimated params}
+\NormalTok{svar <-}\StringTok{ "M"} \CommentTok{# select variable }
+\NormalTok{sampsvar <-}\StringTok{ }\NormalTok{samps[,svar] }\CommentTok{# pull from mcmc}
+\KeywordTok{summary}\NormalTok{(sampsvar) }\CommentTok{# get mean, sd, se, and quantiles for each input variable  }
+
+\NormalTok{den <-}\StringTok{ }\KeywordTok{density}\NormalTok{(sampsvar) }\CommentTok{# get AUC}
+\KeywordTok{densplot}\NormalTok{(sampsvar, }\DataTypeTok{show.obs =}\NormalTok{ F,}\DataTypeTok{type=}\StringTok{"n"}\NormalTok{) }\CommentTok{# density estimate of each variable}
+\KeywordTok{polygon}\NormalTok{(den, }\DataTypeTok{col=}\KeywordTok{adjustcolor}\NormalTok{(colv,}\DataTypeTok{alpha=}\FloatTok{0.5}\NormalTok{),}\DataTypeTok{border=}\NormalTok{colv) }\CommentTok{# fill AUC }
+
+\KeywordTok{plot}\NormalTok{(sampsvar,}\DataTypeTok{trace=}\NormalTok{T,}\DataTypeTok{density=}\NormalTok{T,}\DataTypeTok{col=}\NormalTok{colv) }\CommentTok{# traceplot (below) and density plot (above)}
+\CommentTok{# intensive  }
+\KeywordTok{traceplot}\NormalTok{(sampsvar,}\DataTypeTok{smooth=}\NormalTok{T,}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{,}\DataTypeTok{lwd=}\FloatTok{0.3}\NormalTok{,}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{length}\NormalTok{(sampsvar)),}\DataTypeTok{col=}\NormalTok{colv[}\DecValTok{2}\NormalTok{],}\DataTypeTok{xlab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Iterations"}\NormalTok{),}\DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Sampled values"}\NormalTok{),}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Sampled values over iterations for "}\NormalTok{,svar)) }\CommentTok{# iterations vs sampled valued per variable }
+
+\ControlFlowTok{if}\NormalTok{(mcmcplot}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+  \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\NormalTok{  plotlist <-}\StringTok{ }\KeywordTok{list}\NormalTok{()}
+  \KeywordTok{pdf}\NormalTok{(}\StringTok{"mcmc_vars.pdf"}\NormalTok{,}\DataTypeTok{onefile =}\NormalTok{ T,}\DataTypeTok{paper=}\StringTok{"a4"}\NormalTok{)}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \KeywordTok{colnames}\NormalTok{(samps))\{}
+    \KeywordTok{par}\NormalTok{(}\DataTypeTok{bty=}\StringTok{"n"}\NormalTok{, }\DataTypeTok{las =} \DecValTok{1}\NormalTok{)}
+    \ControlFlowTok{if}\NormalTok{(traceplot}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+      \KeywordTok{traceplot}\NormalTok{(sampsvar,}\DataTypeTok{smooth=}\NormalTok{T,}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{,}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\KeywordTok{length}\NormalTok{(sampsvar)),}\DataTypeTok{col=}\NormalTok{colv[}\DecValTok{2}\NormalTok{],}\DataTypeTok{xlab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Iterations"}\NormalTok{),}\DataTypeTok{ylab=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Sampled values"}\NormalTok{),}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Sampled values over iterations for "}\NormalTok{,svar)) }\CommentTok{# iterations vs sampled valued per variable}
+\NormalTok{    \}}
+\NormalTok{    svar <-}\StringTok{ }\NormalTok{i }\CommentTok{# select variable }
+\NormalTok{    sampsvar <-}\StringTok{ }\NormalTok{samps[,svar] }\CommentTok{# pull from mcmc}
+\NormalTok{    den <-}\StringTok{ }\KeywordTok{density}\NormalTok{(sampsvar) }\CommentTok{# get AUC}
+    \KeywordTok{densplot}\NormalTok{(sampsvar, }\DataTypeTok{show.obs =}\NormalTok{ F,}\DataTypeTok{type=}\StringTok{"n"}\NormalTok{,}\DataTypeTok{main=}\KeywordTok{paste0}\NormalTok{(}\StringTok{"Density estimate of "}\NormalTok{,i)) }\CommentTok{# density estimate of each variable}
+    \KeywordTok{polygon}\NormalTok{(den, }\DataTypeTok{col=}\KeywordTok{adjustcolor}\NormalTok{(colv,}\DataTypeTok{alpha=}\FloatTok{0.5}\NormalTok{),}\DataTypeTok{border=}\NormalTok{colv) }\CommentTok{# fill AUC }
+\NormalTok{  \}}
+  \KeywordTok{dev.off}\NormalTok{()}
+\NormalTok{\} }\CommentTok{# end mcmcplot}
+\CommentTok{# ----------}
+
+\CommentTok{# get the best fit DEB parameters to match the data (using mcmc)}
+
+\NormalTok{pars =}\StringTok{ }\KeywordTok{as.vector}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(samps)[}\KeywordTok{max}\NormalTok{(}\KeywordTok{which}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(samps)}\OperatorTok{$}\NormalTok{lpost }\OperatorTok{>=}\StringTok{ }\KeywordTok{max}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(samps)}\OperatorTok{$}\NormalTok{lpost) }\OperatorTok{-}\FloatTok{0.001}\NormalTok{)),]) }\CommentTok{# old best parameter estimates using mcmc (pre 15-7-19)}
+\NormalTok{pars <-}\StringTok{ }\KeywordTok{c}\NormalTok{(samps_new,pars[}\KeywordTok{c}\NormalTok{(}\StringTok{"gammaH"}\NormalTok{, }\StringTok{"gammaP"}\NormalTok{,}\StringTok{"lpost"}\NormalTok{)]) }\CommentTok{# add gammaH, gammaP, and lpost from original pars to new best parameter estimates }
+\NormalTok{pars <-}\StringTok{ }\NormalTok{pars }\OperatorTok{%>%}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{()}
+\NormalTok{pars[}\StringTok{"Fh"}\NormalTok{] =}\StringTok{ }\DecValTok{2} \CommentTok{# f_scaled (for v.1.1)}
+\NormalTok{pars[}\StringTok{"ENV"}\NormalTok{] =}\StringTok{ }\DecValTok{500} \CommentTok{# Units: L}
+\NormalTok{pars[}\StringTok{"r"}\NormalTok{] =}\StringTok{ }\DecValTok{1}   \CommentTok{# Units: day-1}
+\NormalTok{pars[}\StringTok{"step"}\NormalTok{] =}\StringTok{ }\DecValTok{1}  \CommentTok{# Units: day}
+\NormalTok{pars[}\StringTok{"epsilon"}\NormalTok{] =}\StringTok{ }\DecValTok{20} \CommentTok{# Units: L host-1, day-1 (Rounded estimate from Civitello and Rohr)}
+\NormalTok{pars[}\StringTok{"sigma"}\NormalTok{] =}\StringTok{ }\FloatTok{0.5} 
+\NormalTok{pars[}\StringTok{"m_M"}\NormalTok{] =}\StringTok{ }\DecValTok{1}   \CommentTok{# Units: day-1}
+\NormalTok{pars[}\StringTok{"m_Z"}\NormalTok{] =}\StringTok{ }\DecValTok{1}   \CommentTok{# Units: day-1}
+\NormalTok{pars[}\StringTok{"M_in"}\NormalTok{] =}\StringTok{ }\DecValTok{10}
+\NormalTok{pars[}\StringTok{"K"}\NormalTok{] =}\StringTok{ }\DecValTok{5}
+\NormalTok{pars[}\StringTok{"Det"}\NormalTok{] =}\StringTok{ }\FloatTok{0.1} \CommentTok{# Units mg C/L-1 d-1 (detritus) }
+\NormalTok{pars[}\StringTok{"yRP"}\NormalTok{] =}\StringTok{ }\NormalTok{pars[}\StringTok{"yRP"}\NormalTok{]}\OperatorTok{*}\FloatTok{17.5} \CommentTok{# new yRP = 0.824 * 17.5 (1-8-19)( # old yRP = 0.0471 * (1/0.4) * 7 [expected shedding output per week * (snails shed 40% of their total cercariae during 9-11 AM.) * 7 days] }
+
+\NormalTok{####################################  solve deb eqs #######################################}
+\CommentTok{# display list of param definitions}
+
+\NormalTok{DEB =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(step, Food, L, e, D, RH, P, RP, DAM, HAZ, iM, k, M, EM, }
+\NormalTok{               Fh, muD, DR, yRP, ph, yPE, iPM, eh, mP, alpha, yEF,}
+\NormalTok{               LM, kd, z, kk, hb, theta, mR, yVE, ENV, Lp, SAtotal, r, K, Det)\{}
+  \CommentTok{# starting conditions }
+\NormalTok{  initials =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DataTypeTok{Food=}\NormalTok{Food, }\DataTypeTok{L=}\NormalTok{L, }\DataTypeTok{e=}\NormalTok{e, }\DataTypeTok{D=}\NormalTok{D, }\DataTypeTok{RH=}\NormalTok{RH, }\DataTypeTok{P=}\NormalTok{P, }\DataTypeTok{RP=}\NormalTok{RP, }\DataTypeTok{DAM=}\NormalTok{DAM, }\DataTypeTok{HAZ=}\NormalTok{HAZ)}
+  \CommentTok{# deb parameters}
+\NormalTok{  parameters =}\StringTok{ }\KeywordTok{c}\NormalTok{(iM, k, M, EM, Fh, muD, DR, yRP, ph, yPE, iPM,}
+\NormalTok{                 eh, mP, alpha, yEF, LM, kd, z, kk, hb, theta, mR, yVE, ENV, Lp, SAtotal, r, K, Det)}
+  \CommentTok{# estimate starting deb conditions using fitted params by solving ode's}
+\NormalTok{  ## return survival and host shell length  }
+\NormalTok{  DEBstep <-}\StringTok{ }\KeywordTok{lsoda}\NormalTok{(initials, }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,step), }\DataTypeTok{func =} \StringTok{"derivs"}\NormalTok{, }\DataTypeTok{dllname =}\NormalTok{ deb_compile, }
+                   \DataTypeTok{initfunc =} \StringTok{"initmod"}\NormalTok{,  }\DataTypeTok{nout=}\DecValTok{2}\NormalTok{, }\DataTypeTok{outnames=}\KeywordTok{c}\NormalTok{(}\StringTok{"Survival"}\NormalTok{, }\StringTok{"LG"}\NormalTok{), }\DataTypeTok{maxsteps=}\DecValTok{500000}\NormalTok{,}
+                   \KeywordTok{as.numeric}\NormalTok{(parameters),  }\DataTypeTok{rtol=}\FloatTok{1e-6}\NormalTok{, }\DataTypeTok{atol=}\FloatTok{1e-6}\NormalTok{, }\DataTypeTok{hmax=}\DecValTok{1}\NormalTok{)}
+\NormalTok{  DEBstep[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\OperatorTok{:}\DecValTok{12}\NormalTok{] }\CommentTok{# 12 = survival}
+\NormalTok{\} }\CommentTok{# end deb model}
+
+\NormalTok{### deb output for each timestep }
+\NormalTok{result =}\StringTok{ }\KeywordTok{DEB}\NormalTok{(}\DataTypeTok{step=}\DecValTok{1}\NormalTok{, }\DataTypeTok{Food=}\DecValTok{5}\NormalTok{, }\DataTypeTok{L=}\DecValTok{10}\NormalTok{, }\DataTypeTok{e=}\FloatTok{0.9}\NormalTok{, }\DataTypeTok{D=}\KeywordTok{as.numeric}\NormalTok{(pars[}\StringTok{"DR"}\NormalTok{]), }\DataTypeTok{RH=}\DecValTok{0}\NormalTok{, }\DataTypeTok{P=}\DecValTok{0}\NormalTok{, }\DataTypeTok{RP=}\DecValTok{0}\NormalTok{, }\DataTypeTok{DAM=}\DecValTok{0}\NormalTok{, }\DataTypeTok{HAZ=}\DecValTok{0}\NormalTok{, }\DataTypeTok{iM=}\NormalTok{pars[}\StringTok{"iM"}\NormalTok{], }\DataTypeTok{k=}\NormalTok{pars[}\StringTok{"k"}\NormalTok{], }\DataTypeTok{M=}\NormalTok{pars[}\StringTok{"M"}\NormalTok{], }\DataTypeTok{EM=}\NormalTok{pars[}\StringTok{"EM"}\NormalTok{], }
+             \DataTypeTok{Fh=}\NormalTok{pars[}\StringTok{"Fh"}\NormalTok{], }\DataTypeTok{muD=}\NormalTok{pars[}\StringTok{"muD"}\NormalTok{], }\DataTypeTok{DR=}\NormalTok{pars[}\StringTok{"DR"}\NormalTok{], }\DataTypeTok{yRP=}\NormalTok{pars[}\StringTok{"yRP"}\NormalTok{], }\DataTypeTok{ph=}\NormalTok{pars[}\StringTok{"ph"}\NormalTok{], }\DataTypeTok{yPE=}\NormalTok{pars[}\StringTok{"yPE"}\NormalTok{], }\DataTypeTok{iPM=}\NormalTok{pars[}\StringTok{"iPM"}\NormalTok{], }\DataTypeTok{eh=}\NormalTok{pars[}\StringTok{"eh"}\NormalTok{],}
+             \DataTypeTok{mP=}\NormalTok{pars[}\StringTok{"mP"}\NormalTok{], }\DataTypeTok{alpha=}\NormalTok{pars[}\StringTok{"alpha"}\NormalTok{], }\DataTypeTok{yEF=}\NormalTok{pars[}\StringTok{"yEF"}\NormalTok{], }\DataTypeTok{LM=}\NormalTok{pars[}\StringTok{"LM"}\NormalTok{], }\DataTypeTok{kd=}\NormalTok{pars[}\StringTok{"kd"}\NormalTok{], }\DataTypeTok{z=}\NormalTok{pars[}\StringTok{"z"}\NormalTok{], }\DataTypeTok{kk=}\NormalTok{pars[}\StringTok{"kk"}\NormalTok{], }\DataTypeTok{hb=}\NormalTok{pars[}\StringTok{"hb"}\NormalTok{],}
+             \DataTypeTok{theta=}\NormalTok{pars[}\StringTok{"theta"}\NormalTok{], }\DataTypeTok{mR=}\NormalTok{pars[}\StringTok{"mR"}\NormalTok{], }\DataTypeTok{yVE=}\NormalTok{pars[}\StringTok{"yVE"}\NormalTok{], }\DataTypeTok{ENV=}\NormalTok{pars[}\StringTok{"ENV"}\NormalTok{], }\DataTypeTok{Lp=}\DecValTok{10}\NormalTok{,}\DataTypeTok{SAtotal=}\FloatTok{7007.822}\NormalTok{, }\DataTypeTok{r=}\NormalTok{pars[}\StringTok{"r"}\NormalTok{], }\DataTypeTok{K=}\NormalTok{pars[}\StringTok{"K"}\NormalTok{], }\DataTypeTok{Det=}\NormalTok{pars[}\StringTok{"Det"}\NormalTok{]) }
+
+\NormalTok{### Exposure submodel}
+\CommentTok{# pass the deb state vars into infection model }
+\NormalTok{Infection =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(snail.stats, miracidia, parameters)\{}
+  \CommentTok{# Parameters}
+\NormalTok{  epsilon =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(parameters[}\StringTok{"epsilon"}\NormalTok{])}
+\NormalTok{  sigma =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(parameters[}\StringTok{"sigma"}\NormalTok{])}
+\NormalTok{  ENV =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(parameters[}\StringTok{"ENV"}\NormalTok{])}
+\NormalTok{  m_M =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(parameters[}\StringTok{"m_M"}\NormalTok{])}
+\NormalTok{  step =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(parameters[}\StringTok{"step"}\NormalTok{])}
+  
+  \CommentTok{# Later calculations depend on exposure probabilities}
+\NormalTok{  exp.rates =}\StringTok{ }\NormalTok{epsilon}\OperatorTok{/}\NormalTok{ENV}\OperatorTok{*}\NormalTok{(snail.stats[,}\StringTok{"L"}\NormalTok{]}\OperatorTok{>}\DecValTok{0}\NormalTok{) }\CommentTok{# This is just to get uniform exposure rates}
+\NormalTok{  sum.exp.rates =}\StringTok{ }\KeywordTok{sum}\NormalTok{(exp.rates)}
+  
+  \CommentTok{# Probabilities for fate of miracidia}
+\NormalTok{  ## Still in water}
+\NormalTok{  P.left.in.water =}\StringTok{ }\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{(m_M}\OperatorTok{+}\KeywordTok{sum}\NormalTok{(exp.rates))}\OperatorTok{*}\NormalTok{step)}
+\NormalTok{  ## Infect a snail}
+\NormalTok{  P.infects.this.snail =}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{P.left.in.water)}\OperatorTok{*}\NormalTok{(sigma}\OperatorTok{*}\NormalTok{exp.rates}\OperatorTok{/}\NormalTok{(m_M}\OperatorTok{+}\NormalTok{sum.exp.rates)) }
+\NormalTok{  ## Die in water or fail to infect}
+\NormalTok{  P.dead =}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{P.left.in.water)}\OperatorTok{*}\NormalTok{(m_M}\OperatorTok{/}\NormalTok{(m_M}\OperatorTok{+}\NormalTok{sum.exp.rates)) }\OperatorTok{+}\StringTok{ }\KeywordTok{sum}\NormalTok{((}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{P.left.in.water)}\OperatorTok{*}\NormalTok{((}\DecValTok{1}\OperatorTok{-}\NormalTok{sigma)}\OperatorTok{*}\NormalTok{exp.rates}\OperatorTok{/}\NormalTok{(m_M}\OperatorTok{+}\NormalTok{sum.exp.rates)))}
+  
+\NormalTok{  prob.vector =}\StringTok{ }\KeywordTok{c}\NormalTok{(P.infects.this.snail, P.left.in.water, P.dead)}
+  
+  \CommentTok{# Multinomial outcome from number of miracidia in env based on their survival probability}
+  \KeywordTok{rmultinom}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1}\NormalTok{, }\DataTypeTok{size=}\NormalTok{miracidia, }\DataTypeTok{prob=}\NormalTok{prob.vector)}
+  \CommentTok{#sum(P.left.in.water, P.invades.this.snail, P.dead)}
+\NormalTok{\} }\CommentTok{# end infection model }
+
+\NormalTok{### update all the snails @netlogo}
+\NormalTok{update.snails =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(who, new.L, new.e, new.D, new.RH, new.P, new.RP, new.DAM, new.HAZ, new.LG)\{}
+  \KeywordTok{paste}\NormalTok{(}\StringTok{"ask snail"}\NormalTok{, who, }
+        \StringTok{"[set L"}\NormalTok{, new.L,}
+        \StringTok{"set ee"}\NormalTok{, new.e,}
+        \StringTok{"set D"}\NormalTok{, new.D,}
+        \StringTok{"set RH"}\NormalTok{, new.RH,}
+        \StringTok{"set P"}\NormalTok{, new.P,        }
+        \StringTok{"set RPP"}\NormalTok{, new.RP,       }
+        \StringTok{"set DAM"}\NormalTok{, new.DAM,}
+        \StringTok{"set HAZ"}\NormalTok{, new.HAZ,}
+        \StringTok{"set LG"}\NormalTok{, new.LG, }\CommentTok{# new max length}
+        \StringTok{"]"}\NormalTok{)}
+\NormalTok{\} }\CommentTok{# end host update}
+
+\CommentTok{#Example update}
+\CommentTok{#paste(mapply(update.snails, who=snail.stats[,"who"], new.L=L, new.e=e, new.D=D, new.RH=RH, new.P=P, new.RP=RP, new.DAM=DAM, new.HAZ=HAZ), collapse=" ")}
+
+\KeywordTok{geterrmessage}\NormalTok{() }\CommentTok{# check if there were any error messages  }
+
+\NormalTok{#####################################################################################}
+\NormalTok{####################################  load netlogo }
+\CommentTok{# @netlogo}
+
+\CommentTok{# working NLStart in RStudio. works with gui=F (2018/09/24)}
+\ControlFlowTok{if}\NormalTok{(gui}\OperatorTok{==}\DecValTok{0}\NormalTok{)\{}
+  \KeywordTok{NLStart}\NormalTok{(nl.path,}\DataTypeTok{gui=}\NormalTok{F,}\DataTypeTok{nl.jarname =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"netlogo-"}\NormalTok{,ver_nl,}\StringTok{".jar"}\NormalTok{)) }\CommentTok{# open netlogo without a gui  }
+\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{}
+  \KeywordTok{NLStart}\NormalTok{(nl.path,}\DataTypeTok{nl.jarname =} \KeywordTok{paste0}\NormalTok{(}\StringTok{"netlogo-"}\NormalTok{,ver_nl,}\StringTok{".jar"}\NormalTok{)) }\CommentTok{# open netlogo}
+\NormalTok{\}}
+
+\KeywordTok{NLLoadModel}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(model.path,nl.model),}\DataTypeTok{nl.obj=}\OtherTok{NULL}\NormalTok{) }\CommentTok{# load model  }
+\CommentTok{# if java.lang error persists on Mac, try copying all .jar files from the 'Java' folder where Netlogo is installed into the main Netlogo folder     }
+
+\NormalTok{#####################################################################################}
+\NormalTok{####################################  start netlogo sim }
+
+\CommentTok{# user input --------------------------------------------------------------}
+
+\NormalTok{resource_type=}\StringTok{"algae"} \CommentTok{# detritus # set resource type}
+\NormalTok{rep_num <-}\StringTok{ }\DecValTok{5} \CommentTok{# number of replications}
+
+\CommentTok{# end user input --------------------------------------------------------------}
+
+
+
+
+
+\CommentTok{# run model from here --------------------------------------------------------------}
+
+\NormalTok{snail_control <-}\StringTok{ }\DecValTok{1} \CommentTok{# run molluscicide sims?}
+\NormalTok{hailmary <-}\StringTok{ }\DecValTok{0} \CommentTok{# run hailmary sims separately to other molluscicide sims}
+\NormalTok{detr_impact =}\StringTok{ }\DecValTok{0} \CommentTok{# run detritus impact?}
+\NormalTok{biocontrol =}\StringTok{ }\DecValTok{0} \CommentTok{# run biocontrol?}
+\NormalTok{no_control <-}\StringTok{ }\DecValTok{0} \CommentTok{# run normal no control sims}
+
+\CommentTok{# snail control}
+\NormalTok{me_event <-}\StringTok{ }\DecValTok{1} \CommentTok{# 1 = on day 30, every month, skip a month. 8 = hailmary}
+\NormalTok{me_im_event <-}\StringTok{ }\DecValTok{1} \CommentTok{# 1 = 0.69, 2 = 1.39, 3 = 2.30, 4 = 3.0, 5 = 4.60 for me_im}
+\NormalTok{me_im <-}\StringTok{ }\DecValTok{0} \CommentTok{# create me_im vec}
+
+\CommentTok{# detritus control}
+\NormalTok{detr_im <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{,}\FloatTok{0.25}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.9}\NormalTok{,}\FloatTok{0.99}\NormalTok{) }\CommentTok{# percent reduction in detritus for detritus impact }
+\NormalTok{detr_impact_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DecValTok{60}\NormalTok{) }\CommentTok{# days for each detritus impact sim }
+
+\CommentTok{# biocontrol}
+\NormalTok{be_event <-}\StringTok{ }\DecValTok{2} \CommentTok{# 1 2 3 select biocontrol event (diff snail snack size)}
+\NormalTok{init_host_pop =}\StringTok{ }\DecValTok{50} \CommentTok{# initial population size}
+\NormalTok{init_host_pop_vec <-}\StringTok{ }\DecValTok{50} \CommentTok{# c(50,100,200,500,1000)}
+\CommentTok{# functional pred feeding response: fN = aNP / 1 + ahN}
+\NormalTok{pred_a <-}\StringTok{ }\DecValTok{50} \CommentTok{# predator attack rate (from sokolow etal 2014 acta tropica)}
+\NormalTok{pred_h <-}\StringTok{ }\FloatTok{0.1} \CommentTok{# pred handling time # 0.1 = 10 snails per day}
+\NormalTok{pred_p <-}\StringTok{ }\DecValTok{10} \CommentTok{# predator population density}
+
+\ControlFlowTok{if}\NormalTok{(hailmary}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{me_pars <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{140}\NormalTok{,}\DecValTok{10}\NormalTok{); me_event <-}\StringTok{ }\DecValTok{8}\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{me_pars <-}\StringTok{ }\NormalTok{n.ticks }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{\} }\CommentTok{# set hailmary file handle}
+\CommentTok{#  save multiple sims to dir ---------------------------------------}
+\ControlFlowTok{for}\NormalTok{(rn }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{rep_num)\{}
+  \ControlFlowTok{for}\NormalTok{(me_im_event }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{)\{ }\CommentTok{# 1:5 # me impact (0.69, 1.39, 2.3 ...)}
+    \ControlFlowTok{for}\NormalTok{(me_event }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{7}\NormalTok{)\{ }\CommentTok{# 1:7 # run all me event scenarios and save to file.}
+      
+      \CommentTok{# for hailmary, uncomment below and comment out me_pars loop below (line ) }
+      \CommentTok{# for(me in me_pars)\{ # loop through mes (molluscicide events) for saving one me event per sim to dir (hailmary)}
+        
+\NormalTok{        resources=}\StringTok{"event"} \CommentTok{# set resource cycles}
+\NormalTok{        sicb_sims =}\StringTok{ }\DecValTok{0} \CommentTok{# run sicb sims? # 2-5-19}
+\NormalTok{        fig2 <-}\StringTok{ }\DecValTok{0} \CommentTok{# run fig 2 in sicb? 0 = fig 3}
+        
+\NormalTok{        alpha_pars =}\StringTok{ }\DecValTok{0}
+\NormalTok{        rho_pars =}\StringTok{ }\DecValTok{1}
+        
+        \CommentTok{# set type of resource input @netlogo}
+\NormalTok{        set_resource_type<-}\ControlFlowTok{function}\NormalTok{(resource_type)\{ }\CommentTok{# set resource input in env  }
+          \ControlFlowTok{if}\NormalTok{(resource_type }\OperatorTok{==}\StringTok{ "detritus"}\NormalTok{)\{}\KeywordTok{NLCommand}\NormalTok{(}\StringTok{"set resource_type }\CharTok{\textbackslash{}"}\StringTok{detritus}\CharTok{\textbackslash{}"}\StringTok{ "}\NormalTok{)\}}\ControlFlowTok{else}\NormalTok{\{}\KeywordTok{NLCommand}\NormalTok{(}\StringTok{"set resource_type }\CharTok{\textbackslash{}"}\StringTok{algae}\CharTok{\textbackslash{}"}\StringTok{ "}\NormalTok{)\}\}}
+        \KeywordTok{set_resource_type}\NormalTok{(resource_type) }\CommentTok{# set resource type: "detritus" or "algae"  @netlogo}
+        
+        \CommentTok{# set type of resource dynamics @netlogo}
+\NormalTok{        set_resources<-}\ControlFlowTok{function}\NormalTok{(resources)\{ }\CommentTok{# set resource input in env  }
+          \ControlFlowTok{if}\NormalTok{ (resources }\OperatorTok{==}\StringTok{ "cyclical"}\NormalTok{)\{}\KeywordTok{NLCommand}\NormalTok{(}\StringTok{"set resources }\CharTok{\textbackslash{}"}\StringTok{cyclical}\CharTok{\textbackslash{}"}\StringTok{ "}\NormalTok{)\}}\ControlFlowTok{else}\NormalTok{\{}\KeywordTok{NLCommand}\NormalTok{(}\StringTok{"set resources }\CharTok{\textbackslash{}"}\StringTok{event}\CharTok{\textbackslash{}"}\StringTok{ "}\NormalTok{)\}\}}
+        \KeywordTok{set_resources}\NormalTok{(resources) }\CommentTok{# set resources: "cyclical" or "event"  @netlogo}
+        \KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Resource type = "}\NormalTok{,resource_type,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Resources = "}\NormalTok{,resources)}
+        
+        \CommentTok{# set initial pop size @netlogo}
+        \KeywordTok{NLCommand}\NormalTok{(}\StringTok{"set init_host_pop"}\NormalTok{, init_host_pop)}
+        
+        \ControlFlowTok{if}\NormalTok{(save_to_file}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}\KeywordTok{pdf}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/master_sim.pdf"}\NormalTok{),}\DataTypeTok{onefile=}\NormalTok{T,}\DataTypeTok{paper=}\StringTok{"a4"}\NormalTok{)\}}
+          
+          \CommentTok{# algae params}
+\NormalTok{          rg_pars <-}\StringTok{ }\FloatTok{0.25} \CommentTok{# resource growth rates (rs)}
+          
+          \CommentTok{# detritus params}
+\NormalTok{          detr_pars <-}\StringTok{ }\FloatTok{0.25} \CommentTok{# detritus input (mg L^-1 day^-1)}
+          
+          \CommentTok{# mortality params }
+\NormalTok{          hb_pars <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\FloatTok{0.005}\NormalTok{, }\FloatTok{0.01}\NormalTok{, }\FloatTok{0.02}\NormalTok{, }\FloatTok{0.03}\NormalTok{, }\FloatTok{0.04}\NormalTok{, }\FloatTok{0.05}\NormalTok{, }\FloatTok{0.1}\NormalTok{); hb_pars}
+        
+\NormalTok{        Env_G =}\StringTok{ }\KeywordTok{numeric}\NormalTok{() }\CommentTok{# create empty environment vector }
+\NormalTok{        day <-}\StringTok{ }\DecValTok{1} \CommentTok{# reset sim days }
+        
+        \CommentTok{# individual outputs}
+\NormalTok{        cerc_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# cercariae   }
+\NormalTok{        food_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# food in env }
+\NormalTok{        juv_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# juvenile hosts}
+\NormalTok{        adult_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# adult hosts }
+\NormalTok{        infec_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# infected hosts}
+\NormalTok{        infec_shed_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# infected shedding hosts}
+\NormalTok{        hl_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# host length}
+\NormalTok{        pmass_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# parasite biomass }
+\NormalTok{        host_biomass_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# host biomass list }
+\NormalTok{        egg_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# egg density in env}
+\NormalTok{        egg_mean_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# mean host eggs list}
+\NormalTok{        infec_shed_length_list <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# length of infected shedding hosts}
+        
+        \CommentTok{# master outputs}
+\NormalTok{        cerc_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for cerc density (Env_Z) }
+\NormalTok{        food_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for food dynamics (Env_F) }
+\NormalTok{        juv_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for total host pop () }
+\NormalTok{        adult_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for total host pop () }
+\NormalTok{        infec_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for infected host pop () }
+\NormalTok{        infec_shed_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for infected shedding host pop}
+\NormalTok{        hl_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for host length}
+\NormalTok{        pmass_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for parasite biomass }
+\NormalTok{        host_biomass_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for host biomass}
+\NormalTok{        egg_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for egg density in env}
+\NormalTok{        egg_mean_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for mean host eggs }
+\NormalTok{        infec_shed_length_master <-}\StringTok{ }\KeywordTok{list}\NormalTok{() }\CommentTok{# master list for length of infected shedding hosts}
+        
+        \CommentTok{# define plot window}
+\NormalTok{        plot.matrix <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\KeywordTok{length}\NormalTok{(rg_pars),}\KeywordTok{length}\NormalTok{(detr_pars)))}
+        \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\NormalTok{plot.matrix)}
+        
+        \CommentTok{# ~~~~~~ snail control -----------------------------------------------------------}
+        
+        \ControlFlowTok{if}\NormalTok{(snail_control }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
+          
+\NormalTok{          me_im_pars <-}\StringTok{  }\KeywordTok{c}\NormalTok{(}\FloatTok{0.69}\NormalTok{, }\FloatTok{1.39}\NormalTok{, }\FloatTok{2.3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{4.6}\NormalTok{) }\CommentTok{# 2.3 = 90% snail mortality from molluscicide event (per day)}
+          
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{60}\NormalTok{,}\DecValTok{120}\NormalTok{); me_fh =}\StringTok{ "bimonthly"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{2}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{60}\NormalTok{,}\DecValTok{90}\NormalTok{,}\DecValTok{120}\NormalTok{); me_fh =}\StringTok{ "skip30"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{3}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{,}\DecValTok{90}\NormalTok{,}\DecValTok{120}\NormalTok{); me_fh =}\StringTok{ "skip60"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{4}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{120}\NormalTok{); me_fh =}\StringTok{ "skip90"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{5}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{90}\NormalTok{); me_fh =}\StringTok{ "skip120"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{6}\NormalTok{)\{me_days =}\StringTok{ }\DecValTok{30}\NormalTok{; me_fh =}\StringTok{ "day30"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{7}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{30}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{90}\NormalTok{,}\DecValTok{120}\NormalTok{); me_fh =}\StringTok{ "monthly"}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{8}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{140}\NormalTok{,}\DecValTok{10}\NormalTok{);me_fh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"hailmary"}\NormalTok{,me)\}}
+          \ControlFlowTok{if}\NormalTok{(me_event}\OperatorTok{==}\DecValTok{151}\NormalTok{)\{me_days <-}\StringTok{ }\NormalTok{n.ticks }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{; me_fh =}\StringTok{ ""}\NormalTok{\}}
+          
+          
+          \ControlFlowTok{if}\NormalTok{(me_im_event}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{me_im_pars =}\StringTok{ }\NormalTok{me_im_pars[}\DecValTok{1}\NormalTok{]\}}
+          \ControlFlowTok{if}\NormalTok{(me_im_event}\OperatorTok{==}\DecValTok{2}\NormalTok{)\{me_im_pars =}\StringTok{ }\NormalTok{me_im_pars[}\DecValTok{2}\NormalTok{]\}}
+          \ControlFlowTok{if}\NormalTok{(me_im_event}\OperatorTok{==}\DecValTok{3}\NormalTok{)\{me_im_pars =}\StringTok{ }\NormalTok{me_im_pars[}\DecValTok{3}\NormalTok{]\}}
+          \ControlFlowTok{if}\NormalTok{(me_im_event}\OperatorTok{==}\DecValTok{4}\NormalTok{)\{me_im_pars =}\StringTok{ }\NormalTok{me_im_pars[}\DecValTok{4}\NormalTok{]\}}
+          \ControlFlowTok{if}\NormalTok{(me_im_event}\OperatorTok{==}\DecValTok{5}\NormalTok{)\{me_im_pars =}\StringTok{ }\NormalTok{me_im_pars[}\DecValTok{5}\NormalTok{]\}}
+          
+\NormalTok{          hb_pars <-}\StringTok{ }\FloatTok{0.001}
+          \ControlFlowTok{if}\NormalTok{(resource_type}\OperatorTok{==}\StringTok{"algae"}\NormalTok{)\{detr_pars <-}\StringTok{ }\DecValTok{0}\NormalTok{; algae <-}\StringTok{ }\NormalTok{rg_pars\}}\ControlFlowTok{else}\NormalTok{\{detr_pars <-}\StringTok{ }\NormalTok{detr_pars; rg_pars <-}\StringTok{ }\DecValTok{0}\NormalTok{\}}
+          \KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{algae:"}\NormalTok{,rg_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{detritus:"}\NormalTok{,detr_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{rho:"}\NormalTok{,}\DecValTok{0}\NormalTok{,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{alpha:"}\NormalTok{,alpha_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{mortality (if not mollusciciding):"}\NormalTok{,hb_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{molluscicide days:"}\NormalTok{,me_pars, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{molluscicide impact: "}\NormalTok{,me_im_pars)}
+\NormalTok{        \}}\ControlFlowTok{else}\NormalTok{\{ }\CommentTok{# dont run snail control }
+\NormalTok{          me_pars <-}\StringTok{ }\NormalTok{n.ticks}\OperatorTok{+}\DecValTok{1}
+\NormalTok{          me_days <-}\StringTok{ }\NormalTok{n.ticks }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{          me_im_pars <-}\StringTok{ }\DecValTok{0}
+\NormalTok{          me_im <-}\StringTok{ }\DecValTok{0}
+\NormalTok{          hb_pars <-}\StringTok{ }\FloatTok{0.001}\CommentTok{#hb_pars}
+          \KeywordTok{cat}\NormalTok{(}\StringTok{"Snail control will occur every "}\NormalTok{,}\KeywordTok{max}\NormalTok{(me_pars)}\OperatorTok{/}\KeywordTok{length}\NormalTok{(me_pars),}\StringTok{" days }\CharTok{\textbackslash{}n}\StringTok{ Mortality is "}\NormalTok{,hb_pars) }
+\NormalTok{        \}}
+        
+        \KeywordTok{cat}\NormalTok{(}\StringTok{"Mollusciding on day"}\NormalTok{, me_pars)}
+\NormalTok{        me_im_pars}
+
+        \ControlFlowTok{if}\NormalTok{(resource_type}\OperatorTok{==}\StringTok{"algae"}\NormalTok{)\{detr =}\DecValTok{0}\NormalTok{; rg =}\StringTok{ }\FloatTok{0.25}\NormalTok{;detr_impact=}\DecValTok{0}\NormalTok{;detr_impact_days=n.ticks}\OperatorTok{+}\DecValTok{1}\NormalTok{\}}\ControlFlowTok{else}\NormalTok{\{detr=}\FloatTok{0.25}\NormalTok{;rg=}\DecValTok{0}\NormalTok{; alpha_pars=}\DecValTok{1}\NormalTok{; rho_pars =}\StringTok{ }\DecValTok{1}\NormalTok{\}}
+        
+        \CommentTok{# @detr_impact}
+        \ControlFlowTok{if}\NormalTok{(detr_impact}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{          detr_impact_days =}\StringTok{ }\NormalTok{detr_impact_days }\CommentTok{# set detritus impact days }
+\NormalTok{        \}}\ControlFlowTok{else}\NormalTok{\{}
+\NormalTok{          detr_impact_days =}\StringTok{ }\NormalTok{n.ticks}\OperatorTok{+}\DecValTok{1} \CommentTok{# no detritus impact }
+\NormalTok{        \}}
+        
+        \CommentTok{# @biocontrol}
+        \ControlFlowTok{if}\NormalTok{(biocontrol}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{          hb_pars <-}\StringTok{ }\FloatTok{0.001} \CommentTok{# set baseline mortality }
+          \ControlFlowTok{if}\NormalTok{(be_event}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{snail_snack =}\StringTok{ }\DecValTok{4}\OperatorTok{:}\DecValTok{7}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(be_event}\OperatorTok{==}\DecValTok{2}\NormalTok{)\{snail_snack =}\StringTok{ }\DecValTok{8}\OperatorTok{:}\DecValTok{10}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(be_event}\OperatorTok{==}\DecValTok{3}\NormalTok{)\{snail_snack =}\StringTok{ }\DecValTok{12}\OperatorTok{:}\DecValTok{15}\NormalTok{\}}
+          \ControlFlowTok{if}\NormalTok{(be_event}\OperatorTok{==}\DecValTok{4}\NormalTok{)\{snail_snack =}\StringTok{ }\DecValTok{18}\OperatorTok{:}\DecValTok{22}\NormalTok{\}}
+\NormalTok{        \}}
+        
+        \CommentTok{# file handles   ----------------------------------------------------------}
+        \ControlFlowTok{if}\NormalTok{(snail_control}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{    }
+          \ControlFlowTok{if}\NormalTok{(hailmary}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{ }\CommentTok{# @hailmary}
+\NormalTok{            fhh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(resource_type,}\StringTok{"_"}\NormalTok{,me_fh,}\StringTok{"_rep"}\NormalTok{,rn);fhh }\CommentTok{# use for success/failure plot (fig 2) in plos_one sim}
+            \CommentTok{# fhh = paste0(resource_type,"_",me_fh,"_meim",me_im_event,"_rep",rn);fhh # use for hailmary120 for me_im_event = 1:5. plosone fig 3 (28-7-19))}
+\NormalTok{            global_output_fh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/plos_sims/hailmary/"}\NormalTok{,fhh,}\StringTok{".R"}\NormalTok{)}
+\NormalTok{          \}}\ControlFlowTok{else}\NormalTok{\{}
+\NormalTok{            fhh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(resource_type,}\StringTok{"_"}\NormalTok{,me_fh,}\StringTok{"_meim"}\NormalTok{,me_im_event,}\StringTok{"_rep"}\NormalTok{,rn);fhh}
+\NormalTok{            global_output_fh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/plos_sims/"}\NormalTok{,me_fh,}\StringTok{"/"}\NormalTok{,fhh,}\StringTok{".R"}\NormalTok{)}
+\NormalTok{          \}}
+\NormalTok{        \}}
+        \ControlFlowTok{if}\NormalTok{(detr_impact}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{          fhh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"detday_"}\NormalTok{,detr_impact_days[}\DecValTok{1}\NormalTok{],}\StringTok{"_detim_"}\NormalTok{,detr_im}\OperatorTok{*}\DecValTok{100}\NormalTok{);fhh}
+\NormalTok{          global_output_fh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/detr_impact_sims/"}\NormalTok{,fhh,}\StringTok{".R"}\NormalTok{)}
+\NormalTok{        \}}
+        \ControlFlowTok{if}\NormalTok{(biocontrol}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+\NormalTok{          fhh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(resource_type,}\StringTok{"_be"}\NormalTok{,be_event,}\StringTok{"_hostpop"}\NormalTok{,init_host_pop,}\StringTok{"_predpop"}\NormalTok{,pred_p);fhh}
+\NormalTok{          global_output_fh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/biocontrol_sims/"}\NormalTok{,fhh,}\StringTok{".R"}\NormalTok{)}
+\NormalTok{        \}  }
+        
+        \ControlFlowTok{if}\NormalTok{(no_control}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+          \CommentTok{# no control scenario}
+\NormalTok{          fhh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(resource_type,}\StringTok{"_meim"}\NormalTok{,me_im_event,}\StringTok{"_rep"}\NormalTok{,rn);fhh}
+\NormalTok{          global_output_fh =}\StringTok{ }\KeywordTok{paste0}\NormalTok{(wd,}\StringTok{"/plos_sims/nocontrol/"}\NormalTok{,fhh,}\StringTok{".R"}\NormalTok{)}
+\NormalTok{        \}}
+        
+        
+        \ControlFlowTok{if}\NormalTok{(resource_type}\OperatorTok{==}\StringTok{"algae"}\NormalTok{)\{detr_pars <-}\StringTok{ }\DecValTok{0}\NormalTok{; algae <-}\StringTok{ }\NormalTok{rg_pars\}}\ControlFlowTok{else}\NormalTok{\{detr_pars <-}\StringTok{ }\NormalTok{detr_pars; rg_pars <-}\StringTok{ }\DecValTok{0}\NormalTok{\}}
+        \ControlFlowTok{if}\NormalTok{(}\KeywordTok{length}\NormalTok{(me_days)}\OperatorTok{==}\StringTok{ }\DecValTok{1} \OperatorTok{|}\StringTok{ }\DecValTok{2} \OperatorTok{|}\StringTok{ }\DecValTok{3}\NormalTok{)\{me_days =}\StringTok{ }\KeywordTok{rep}\NormalTok{(me_days,}\DecValTok{4}\NormalTok{)\} }\CommentTok{# set vector same length as in sim model}
+        \ControlFlowTok{if}\NormalTok{(}\KeywordTok{length}\NormalTok{(detr_impact_days)}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{detr_impact_days =}\StringTok{ }\KeywordTok{rep}\NormalTok{(detr_impact_days,}\DecValTok{2}\NormalTok{)\} }\CommentTok{# set vector same length as in sim model}
+        \KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{algae:"}\NormalTok{,rg_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{detritus:"}\NormalTok{,detr_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{rho:"}\NormalTok{,}\DecValTok{0}\NormalTok{,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{alpha:"}\NormalTok{,alpha_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{mortality (if not mollusciciding):"}\NormalTok{,hb_pars,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{molluscicide days:"}\NormalTok{,}\KeywordTok{unique}\NormalTok{(me_days), }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{molluscicide impact: "}\NormalTok{,me_im_pars)}
+        \KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{M days = "}\NormalTok{,}\KeywordTok{unique}\NormalTok{(me_days)); }\KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{M impact = "}\NormalTok{,me_im); }\KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Det impact days = "}\NormalTok{,detr_impact_days) }
+\NormalTok{        global_output_fh}
+        
+        
+\NormalTok{####################################  start netlogo sim  }
+        \ControlFlowTok{for}\NormalTok{(hb }\ControlFlowTok{in}\NormalTok{ hb_pars)\{}
+          \ControlFlowTok{for}\NormalTok{(detr }\ControlFlowTok{in}\NormalTok{ detr_pars)\{ }\CommentTok{# loop through detritus inputs}
+            \ControlFlowTok{for}\NormalTok{(alpha }\ControlFlowTok{in}\NormalTok{ alpha_pars)\{ }\CommentTok{# loop through alphas (amplitude in food cycle)}
+              \ControlFlowTok{for}\NormalTok{(rho }\ControlFlowTok{in}\NormalTok{ rho_pars)\{ }\CommentTok{# loop through rhos (periodicity of food cycle)}
+                \ControlFlowTok{for}\NormalTok{(rg }\ControlFlowTok{in}\NormalTok{ rg_pars)\{ }\CommentTok{# loop through rgs (food growth rates)}
+                  \ControlFlowTok{for}\NormalTok{(me }\ControlFlowTok{in}\NormalTok{ me_pars)\{ }\CommentTok{# loop through me (molluscicide day events) comment out for @hailmary}
+                  \ControlFlowTok{for}\NormalTok{(me_im }\ControlFlowTok{in}\NormalTok{ me_im_pars)\{ }\CommentTok{# loop through me_im (molluscicide impact events)}
+                    
+                    \KeywordTok{NLCommand}\NormalTok{(}\StringTok{"setup"}\NormalTok{)}
+\NormalTok{                    day <-}\StringTok{ }\DecValTok{1} \CommentTok{# reset days }
+\NormalTok{                    Env_G[}\KeywordTok{is.na}\NormalTok{(Env_G)] <-}\StringTok{ }\DecValTok{0} \CommentTok{# turn NAs to 0 to feed into rbinom function }
+                    \ControlFlowTok{for}\NormalTok{(t }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{n.ticks)\{ }\CommentTok{# start nl sim  @netlogo}
+                      \CommentTok{# define food dynamics for cyclical algal (logistic food growth equation) or detritus food sources}
+\NormalTok{                      alpha <-}\StringTok{ }\NormalTok{alpha }\CommentTok{# amplitude of resources}
+\NormalTok{                      rho <-}\StringTok{ }\NormalTok{rho  }\CommentTok{# periodicity (time range of resource cycles)  }
+\NormalTok{                      rg <-}\StringTok{ }\NormalTok{rg }\CommentTok{# resource growth rate }
+\NormalTok{                      rg_t <-}\StringTok{ }\NormalTok{rg }\OperatorTok{+}\StringTok{ }\NormalTok{alpha }\OperatorTok{*}\StringTok{ }\NormalTok{rg }\OperatorTok{*}\StringTok{ }\KeywordTok{sin}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{pi }\OperatorTok{*}\StringTok{ }\NormalTok{t}\OperatorTok{/}\NormalTok{rho) }\CommentTok{# equilibrium cyclical resource dynamics (19-12-18)}
+\NormalTok{                      pars[}\StringTok{"r"}\NormalTok{] <-}\StringTok{ }\NormalTok{rg_t }\CommentTok{# set resource growth rate }
+\NormalTok{                      pars[}\StringTok{"Det"}\NormalTok{] <-}\StringTok{ }\NormalTok{detr }\CommentTok{# Units mg C/L-1 d-1 (detritus)}
+                      
+                      \CommentTok{# @detr_impact -------------------------------------------------------------------}
+                      
+                      \ControlFlowTok{if}\NormalTok{(detr_impact}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{ }\CommentTok{# detritus impact on select days}
+                        \ControlFlowTok{if}\NormalTok{(day }\OperatorTok{==}\StringTok{ }\NormalTok{detr_impact_days[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{detr_impact_days[}\DecValTok{2}\NormalTok{])\{ }
+\NormalTok{                          detr_}\DecValTok{95}\NormalTok{ <-}\StringTok{ }\NormalTok{detr }\OperatorTok{*}\StringTok{ }\NormalTok{detr_im }\CommentTok{# reduce detr supply rate to 25%}
+\NormalTok{                          pars[}\StringTok{"Det"}\NormalTok{] <-}\StringTok{ }\NormalTok{detr_}\DecValTok{95} \CommentTok{# set det to detr95}
+\NormalTok{                          detr <-}\StringTok{ }\NormalTok{pars[}\StringTok{"Det"}\NormalTok{] }\CommentTok{# replace exisiting det for forthcoming days }
+\NormalTok{                        \}}
+\NormalTok{                      \}}
+                      \CommentTok{# else\{ # no detritus impact and rebound back to normal detr growth }
+                      \CommentTok{#     pars["Det"] <- detr # Units mg C/L-1 d-1 (detritus)}
+                      \CommentTok{#     \}}
+                      
+                      \CommentTok{# @snail_control (me events) -------------------------------------------------------------------}
+                      \ControlFlowTok{if}\NormalTok{(snail_control}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}
+                        \CommentTok{# if(day==me)\{ # for me_pars loop (separate sims per me_event) @hailmary}
+                          \CommentTok{# if(day %% me_day1==0)\{ # @me_day (v. 1.4) (multiple me_events per sim)}
+                          \ControlFlowTok{if}\NormalTok{(day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{2}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{3}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{4}\NormalTok{])\{ }\CommentTok{# @me_day (v. 1.4) (select multiple me_events per sim)}
+\NormalTok{                          hb <-}\StringTok{ }\NormalTok{me_im}
+                          \CommentTok{# cat("\textbackslash{}n---------- DEAD SNAILS \textbackslash{}ndays = ", day,"\textbackslash{}nnumber of snails = ", length(snail.stats$L))}
+\NormalTok{                        \}}\ControlFlowTok{else}\NormalTok{\{hb <-}\StringTok{ }\NormalTok{hb_pars[}\DecValTok{1}\NormalTok{]\} }\CommentTok{# hb on non-snail control days }
+\NormalTok{                      \}}\ControlFlowTok{else}\NormalTok{\{hb <-}\StringTok{ }\NormalTok{hb_pars[}\DecValTok{1}\NormalTok{]\} }\CommentTok{# hb when not using snail control }
+                      
+                      \CommentTok{# set environment variables }
+\NormalTok{                      Env_G[}\KeywordTok{is.na}\NormalTok{(Env_G)] <-}\StringTok{ }\DecValTok{0} \CommentTok{# turn NAs to 0 to feed into rbinom function }
+\NormalTok{                      environment =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{NLGetAgentSet}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"F"}\NormalTok{, }\StringTok{"M"}\NormalTok{, }\StringTok{"Z"}\NormalTok{, }\StringTok{"G"}\NormalTok{), }\StringTok{"patches"}\NormalTok{)) }\CommentTok{# calc food, free miracidia, cercariae released, and eggs, per patch}
+                      
+                      \CommentTok{# if there are hosts }
+                      \ControlFlowTok{if}\NormalTok{(}\KeywordTok{NLReport}\NormalTok{(}\StringTok{"count snails"}\NormalTok{) }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
+                        \CommentTok{# set host variables}
+\NormalTok{                        snail.stats =}\StringTok{ }\KeywordTok{NLGetAgentSet}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"who"}\NormalTok{, }\StringTok{"L"}\NormalTok{, }\StringTok{"ee"}\NormalTok{, }\StringTok{"D"}\NormalTok{, }\StringTok{"RH"}\NormalTok{, }\StringTok{"P"}\NormalTok{, }\StringTok{"RPP"}\NormalTok{, }\StringTok{"DAM"}\NormalTok{, }\StringTok{"HAZ"}\NormalTok{, }\StringTok{"LG"}\NormalTok{), }\StringTok{"snails"}\NormalTok{)}
+\NormalTok{                        N.snails =}\StringTok{ }\KeywordTok{length}\NormalTok{(snail.stats[,}\StringTok{"L"}\NormalTok{])}
+                        
+                        \CommentTok{# Infect snails}
+\NormalTok{                        Infection.step =}\StringTok{ }\KeywordTok{as.vector}\NormalTok{(}\KeywordTok{Infection}\NormalTok{(snail.stats, environment[}\DecValTok{2}\NormalTok{], pars)) }\CommentTok{# Who gets infected}
+\NormalTok{                        snail.stats[}\KeywordTok{which}\NormalTok{(Infection.step[}\DecValTok{1}\OperatorTok{:}\NormalTok{N.snails] }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{),}\StringTok{"P"}\NormalTok{] =}\StringTok{ }\NormalTok{snail.stats[}\KeywordTok{which}\NormalTok{(Infection.step[}\DecValTok{1}\OperatorTok{:}\NormalTok{N.snails] }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{),}\StringTok{"P"}\NormalTok{] }\OperatorTok{+}\StringTok{ }\FloatTok{2.85e-5} \CommentTok{# add biomass of one miracidia}
+                        
+                        \CommentTok{# @biocontrol -------------------------------------------------- }
+                        \ControlFlowTok{if}\NormalTok{(biocontrol }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)\{}
+                          \CommentTok{# if(any(round(snail.stats$L) == snail_snack) == T)\{}
+                          \ControlFlowTok{if}\NormalTok{(}\KeywordTok{any}\NormalTok{(}\KeywordTok{round}\NormalTok{(snail.stats}\OperatorTok{$}\NormalTok{L) }\OperatorTok{==}\StringTok{ }\NormalTok{snail_snack[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{snail_snack[}\DecValTok{2}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{snail_snack[}\DecValTok{3}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{snail_snack[}\DecValTok{4}\NormalTok{])}\OperatorTok{==}\NormalTok{T)\{ }
+                            \KeywordTok{cat}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{Eaten snails = "}\NormalTok{, }\KeywordTok{length}\NormalTok{(}\KeywordTok{which}\NormalTok{(snail.stats}\OperatorTok{$}\NormalTok{L }\OperatorTok{==}\StringTok{ }\NormalTok{snail_snack)))}
+                            \CommentTok{# snail.stats$L = round(snail.stats$L)}
+                            \CommentTok{# snail.stats$L[snail.stats$L == snail_snack] <- 0 # kill preyed hosts}
+\NormalTok{                            hb <-}\StringTok{ }\NormalTok{hb }\OperatorTok{+}\StringTok{ }\NormalTok{(pred_a }\OperatorTok{*}\StringTok{ }\NormalTok{pred_p) }\OperatorTok{/}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{pred_a }\OperatorTok{*}\StringTok{ }\NormalTok{pred_h }\OperatorTok{*}\StringTok{ }\NormalTok{N.snails)}
+                            
+\NormalTok{                          \} }
+\NormalTok{                        \}}
+                        
+                        \CommentTok{# Update DEBS, HAZ=0 so survival probs are calculated for the current day}
+\NormalTok{                        snail.update =}\StringTok{ }\KeywordTok{t}\NormalTok{(}\KeywordTok{mapply}\NormalTok{(DEB, }\DataTypeTok{L=}\NormalTok{snail.stats[,}\DecValTok{2}\NormalTok{], }\DataTypeTok{e=}\NormalTok{snail.stats[,}\DecValTok{3}\NormalTok{], }\DataTypeTok{D=}\NormalTok{snail.stats[,}\DecValTok{4}\NormalTok{], }\DataTypeTok{RH=}\NormalTok{snail.stats[,}\DecValTok{5}\NormalTok{],}
+                                                \DataTypeTok{P=}\NormalTok{snail.stats[,}\DecValTok{6}\NormalTok{], }\DataTypeTok{RP=}\NormalTok{snail.stats[,}\DecValTok{7}\NormalTok{], }\DataTypeTok{DAM=}\NormalTok{snail.stats[,}\DecValTok{8}\NormalTok{], }\DataTypeTok{Lp=}\NormalTok{snail.stats[,}\DecValTok{10}\NormalTok{],}\CommentTok{# Food=environment[1]*(snail.stats[,2]^2)/sum(snail.stats[,2]^2), # update food availability per snail }
+                                                \DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{step=}\DecValTok{1}\NormalTok{, }\DataTypeTok{HAZ=}\DecValTok{0}\NormalTok{, }\DataTypeTok{Food=}\NormalTok{environment[}\DecValTok{1}\NormalTok{],}\CommentTok{# constant food available (23-1-19)}
+                                                                \DataTypeTok{iM=}\NormalTok{pars[}\StringTok{"iM"}\NormalTok{], }\DataTypeTok{k=}\NormalTok{pars[}\StringTok{"k"}\NormalTok{], }\DataTypeTok{M=}\NormalTok{pars[}\StringTok{"M"}\NormalTok{], }\DataTypeTok{EM=}\NormalTok{pars[}\StringTok{"EM"}\NormalTok{], }\DataTypeTok{Fh=}\NormalTok{pars[}\StringTok{"Fh"}\NormalTok{], }
+                                                                \DataTypeTok{muD=}\NormalTok{pars[}\StringTok{"muD"}\NormalTok{],}
+                                                                \DataTypeTok{DR=}\NormalTok{pars[}\StringTok{"DR"}\NormalTok{], }\DataTypeTok{yRP=}\NormalTok{pars[}\StringTok{"yRP"}\NormalTok{], }\DataTypeTok{ph=}\NormalTok{pars[}\StringTok{"ph"}\NormalTok{], }\DataTypeTok{yPE=}\NormalTok{pars[}\StringTok{"yPE"}\NormalTok{], }\DataTypeTok{iPM=}\NormalTok{pars[}\StringTok{"iPM"}\NormalTok{], }\DataTypeTok{eh=}\NormalTok{pars[}\StringTok{"eh"}\NormalTok{],}
+                                                                \DataTypeTok{mP=}\NormalTok{pars[}\StringTok{"mP"}\NormalTok{], }\DataTypeTok{alpha=}\NormalTok{pars[}\StringTok{"alpha"}\NormalTok{], }\DataTypeTok{yEF=}\NormalTok{pars[}\StringTok{"yEF"}\NormalTok{], }\DataTypeTok{LM=}\NormalTok{pars[}\StringTok{"LM"}\NormalTok{], }\DataTypeTok{kd=}\NormalTok{pars[}\StringTok{"kd"}\NormalTok{], }\DataTypeTok{z=}\NormalTok{pars[}\StringTok{"z"}\NormalTok{], }
+                                                                \DataTypeTok{kk=}\NormalTok{pars[}\StringTok{"kk"}\NormalTok{], }
+                                                                \DataTypeTok{hb=}\NormalTok{hb,}
+                                                                \DataTypeTok{theta=}\NormalTok{pars[}\StringTok{"theta"}\NormalTok{], }\DataTypeTok{mR=}\NormalTok{pars[}\StringTok{"mR"}\NormalTok{], }\DataTypeTok{yVE=}\NormalTok{pars[}\StringTok{"yVE"}\NormalTok{], }\DataTypeTok{SAtotal=} \KeywordTok{sum}\NormalTok{(snail.stats[,}\DecValTok{2}\NormalTok{]}\OperatorTok{^}\DecValTok{2}\NormalTok{), }
+                                                                \DataTypeTok{ENV=}\NormalTok{pars[}\StringTok{"ENV"}\NormalTok{], }\DataTypeTok{r=}\NormalTok{pars[}\StringTok{"r"}\NormalTok{], }\DataTypeTok{K=}\NormalTok{pars[}\StringTok{"K"}\NormalTok{], }
+                                                                \DataTypeTok{Det=}\NormalTok{pars[}\StringTok{"Det"}\NormalTok{]))) }\CommentTok{# detritus (Det) defined in C file}
+                        
+\NormalTok{                        snail.update[}\KeywordTok{is.nan}\NormalTok{(snail.update)] <-}\StringTok{ }\DecValTok{0} \CommentTok{# turn nans from matrix into 0}
+                        
+\NormalTok{                        L =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"L"}\NormalTok{] }\CommentTok{# host structural length}
+\NormalTok{                        e =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"e"}\NormalTok{] }\CommentTok{# host scaled reserve density    }
+\NormalTok{                        D =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"D"}\NormalTok{] }\CommentTok{# host development }
+\NormalTok{                        RH =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"RH"}\NormalTok{] }\CommentTok{# host energy to reproduction buffer  }
+\NormalTok{                        DAM =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"DAM"}\NormalTok{] }\CommentTok{# host damage from starvation  }
+\NormalTok{                        HAZ =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"HAZ"}\NormalTok{] }\CommentTok{# host hazard rate from starvation   }
+\NormalTok{                        LG =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"LG"}\NormalTok{] }\CommentTok{# host shell length  }
+\NormalTok{                        P =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"P"}\NormalTok{] }\CommentTok{# parasite mass (sum within host)}
+\NormalTok{                        RP =}\StringTok{ }\NormalTok{snail.update[,}\StringTok{"RP"}\NormalTok{] }\CommentTok{# parasite reproductive buffer  }
+                        
+                        \CommentTok{# ingestion = environment[1] - sum(snail.update[,"Food"]) # food intake by host from environment (for v.1.1)}
+\NormalTok{                        chi <-}\StringTok{ }\NormalTok{pars[}\StringTok{"M"}\NormalTok{]}\OperatorTok{/}\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{pars[}\StringTok{"EM"}\NormalTok{]) }\CommentTok{# length to volume conversion factor for getting biomass}
+\NormalTok{                        host_biomass <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(chi }\OperatorTok{*}\StringTok{ }\NormalTok{L}\OperatorTok{^}\DecValTok{3}\NormalTok{) }\CommentTok{# get total host biomass}
+                        
+\NormalTok{                        Eggs =}\StringTok{ }\KeywordTok{floor}\NormalTok{(RH}\OperatorTok{/}\FloatTok{0.015}\NormalTok{)  }\CommentTok{# Figure out how many (whole) eggs are released  }
+                        \CommentTok{# if(day==me)\{Eggs <- Eggs[1:round(0.1*length(Eggs))]\} # kill off 90% of snail eggs in water with molluscicide event (v. 1.2)  }
+\NormalTok{                        RH =}\StringTok{ }\NormalTok{RH }\OperatorTok{%%}\StringTok{ }\FloatTok{0.015}        \CommentTok{# Remove released cercariae from the buffer}
+\NormalTok{                        Cercs =}\StringTok{ }\KeywordTok{floor}\NormalTok{(RP}\OperatorTok{/}\FloatTok{4e-5}\NormalTok{)  }\CommentTok{# Figure out how many (whole) cercs are released}
+\NormalTok{                        RP =}\StringTok{ }\NormalTok{RP }\OperatorTok{%%}\StringTok{ }\FloatTok{4e-5}         \CommentTok{# Remove released cercariae from buffer}
+\NormalTok{                        Eggs =}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(Eggs); Cercs =}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(Cercs) }
+\NormalTok{                        eggs_mean <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(Eggs[Eggs }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{]) }\CommentTok{# get mean eggs in env}
+\NormalTok{                        eggs_mean <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(eggs_mean)}
+                        
+                        \CommentTok{# Update environment }
+\NormalTok{                        Env_M =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(Infection.step[N.snails }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{pars[}\StringTok{"M_in"}\NormalTok{]) }\CommentTok{# total miracidia density }
+\NormalTok{                        Env_Z =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(environment[}\DecValTok{3}\NormalTok{]}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{pars[}\StringTok{"m_Z"}\NormalTok{]}\OperatorTok{*}\NormalTok{pars[}\StringTok{"step"}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\KeywordTok{sum}\NormalTok{(Cercs)}\OperatorTok{/}\NormalTok{pars[}\StringTok{"ENV"}\NormalTok{]) }\CommentTok{# total cerc density}
+\NormalTok{                        Env_G =}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(Env_G) }\CommentTok{# set pop density outputs to integer to pass into Env_G and rbinom func}
+                        
+                        \CommentTok{# @snail_control (me events) -------------------------------------------------------------------}
+                        \CommentTok{# kill off 90% of snail eggs in water with molluscicide event }
+                        \CommentTok{# ifelse(day==me,Env_G[day] <- max(0, 0.1*sum(Eggs),na.rm=T),Env_G[day] <- max(0, sum(Eggs),na.rm=T)) # for me_pars loop (separate sims per me_event) @hailmary}
+                        \CommentTok{# ifelse(day %% me_day1==0,Env_G[day] <- max(0, 0.1*sum(Eggs),na.rm=T),Env_G[day] <- max(0, sum(Eggs),na.rm=T)) # @me_day (v. 1.4) (multiple me_events per sim)}
+                        \KeywordTok{ifelse}\NormalTok{(day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{2}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{3}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{4}\NormalTok{],Env_G[day] <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{0.1}\OperatorTok{*}\KeywordTok{sum}\NormalTok{(Eggs),}\DataTypeTok{na.rm=}\NormalTok{T),Env_G[day] <-}\StringTok{ }\KeywordTok{max}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{sum}\NormalTok{(Eggs),}\DataTypeTok{na.rm=}\NormalTok{T)) }\CommentTok{# @me_day (v. 1.4)}
+                        
+                        \CommentTok{# Env_G[day] <- max(0, sum(Eggs),na.rm=T)}
+\NormalTok{                        egg <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(Eggs) }\CommentTok{# get summed host eggs }
+                        
+\NormalTok{                        Env_G[}\KeywordTok{is.na}\NormalTok{(Env_G)] <-}\StringTok{ }\DecValTok{0} \CommentTok{# turn NAs to 0 to feed into rbinom function  }
+                        \CommentTok{# Env_F = max(0.001, as.numeric(pars["K"]*environment[1]/(environment[1] + (pars["K"] - environment[1])*exp(-pars["r"]*pars["step"])) - ingestion)) # Analytical soln to logistic - ingestion (alphas [1,100]) (original r growth equation)}
+                        \CommentTok{# Env_F = max(0.001, as.numeric(pars["K"]*environment[1]/(environment[1] + (pars["K"] - environment[1])*exp(-rg_t*pars["step"])) - ingestion)) # Analytical soln to logistic - ingestion with equilibrium resource growth wave (rg_t) (alphas [0,1]) (for v.1.1)     }
+                        \CommentTok{# F = F * exp(- r + alpha * r * sin(2 * pi * t/rho) * s) * (1 - F/K) - f(i_\{M\} * sum(L^2) # v. 1.2 algae and detritus with cyclical algal growth}
+                        \CommentTok{# r_t <- pars["r"] + alpha * pars["r"] * sin(2 * pi * t/rho) # equilibrium resource dynamics (static)}
+\NormalTok{                        Env_F =}\StringTok{ }\KeywordTok{max}\NormalTok{(}\FloatTok{0.001}\NormalTok{, snail.update[}\DecValTok{1}\NormalTok{,}\StringTok{"Food"}\NormalTok{]) }\CommentTok{# algal or detritus food sources (for v.1.2)}
+                        
+                        \CommentTok{# @detr_impact -------------------------------------------------------------------}
+                        
+                        \ControlFlowTok{if}\NormalTok{(detr_impact}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{ }\CommentTok{# detritus impact on select days }
+                          \ControlFlowTok{if}\NormalTok{(day }\OperatorTok{==}\StringTok{ }\NormalTok{detr_impact_days[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{detr_impact_days[}\DecValTok{2}\NormalTok{])\{}
+\NormalTok{                            Env_F_}\DecValTok{95}\NormalTok{ =}\StringTok{ }\KeywordTok{max}\NormalTok{(}\FloatTok{0.001}\NormalTok{, snail.update[}\DecValTok{1}\NormalTok{,}\StringTok{"Food"}\NormalTok{] }\OperatorTok{*}\StringTok{ }\NormalTok{detr_im) }\CommentTok{# reduce detritusto 25% (v.1.4)}
+\NormalTok{                            Env_F =}\StringTok{ }\NormalTok{Env_F_}\DecValTok{95}
+\NormalTok{                          \}}
+\NormalTok{                        \}}
+                        \CommentTok{# else\{ # no detritus impact (normal conditions)}
+                        \CommentTok{#   Env_F = max(0.001, snail.update[1,"Food"]) # algal or detritus food sources (for v.1.2)}
+                        \CommentTok{#   \}}
+                        
+                        \CommentTok{# Command back to NL @netlogo}
+\NormalTok{                        snail.commands =}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\KeywordTok{mapply}\NormalTok{(update.snails, }\DataTypeTok{who=}\NormalTok{snail.stats[,}\StringTok{"who"}\NormalTok{], }\DataTypeTok{new.L=}\NormalTok{L, }\DataTypeTok{new.e=}\NormalTok{e, }\DataTypeTok{new.D=}\NormalTok{D, }\DataTypeTok{new.RH=}\NormalTok{RH, }\DataTypeTok{new.P=}\NormalTok{P, }\DataTypeTok{new.RP=}\NormalTok{RP, }\DataTypeTok{new.DAM=}\NormalTok{DAM, }\DataTypeTok{new.HAZ=}\NormalTok{HAZ, }\DataTypeTok{new.LG=}\NormalTok{LG), }\DataTypeTok{collapse=}\StringTok{" "}\NormalTok{)}
+                        \KeywordTok{NLCommand}\NormalTok{(snail.commands) }
+                        
+\NormalTok{                        hl_list[t] <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(L) }\CommentTok{# get average host lengths per model step }
+\NormalTok{                        pmass_list[t] <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(P) }\CommentTok{# get total parasite mass per model step}
+\NormalTok{                        host_biomass_list <-}\StringTok{ }\NormalTok{host_biomass }\CommentTok{# get host mass }
+\NormalTok{                        egg_mean_list[t] <-}\StringTok{ }\NormalTok{eggs_mean }\CommentTok{# get mean eggs in env}
+                        
+\NormalTok{                      \}}\ControlFlowTok{else}\NormalTok{\{ }\CommentTok{# ------------------------------------ if there are no hosts  }
+                        
+\NormalTok{                        Env_M =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(environment[}\DecValTok{2}\NormalTok{]}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{pars[}\StringTok{"m_M"}\NormalTok{]}\OperatorTok{*}\NormalTok{pars[}\StringTok{"step"}\NormalTok{]) }\OperatorTok{+}\StringTok{ }\NormalTok{pars[}\StringTok{"M_in"}\NormalTok{]) }\CommentTok{# total miracidia density }
+\NormalTok{                        Env_Z =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(environment[}\DecValTok{3}\NormalTok{]}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{pars[}\StringTok{"m_Z"}\NormalTok{]}\OperatorTok{*}\NormalTok{pars[}\StringTok{"step"}\NormalTok{])) }\CommentTok{# total cerc density}
+\NormalTok{                        Env_G =}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(Env_G) }\CommentTok{# set pop density outputs to integer to pass into Env_G and rbinom func}
+\NormalTok{                        Env_G[day] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{                        Env_F =}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(pars[}\StringTok{"Det"}\NormalTok{] }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{, }\KeywordTok{as.numeric}\NormalTok{(pars[}\StringTok{"K"}\NormalTok{]}\OperatorTok{*}\NormalTok{environment[}\DecValTok{1}\NormalTok{]}\OperatorTok{/}\NormalTok{(environment[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{(pars[}\StringTok{"K"}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{environment[}\DecValTok{1}\NormalTok{])}\OperatorTok{*}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{pars[}\StringTok{"r"}\NormalTok{]}\OperatorTok{*}\NormalTok{pars[}\StringTok{"step"}\NormalTok{]))), }\KeywordTok{as.numeric}\NormalTok{(environment[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{pars[}\StringTok{"Det"}\NormalTok{]))}
+                        
+                        \CommentTok{# @detr_impact -------------------------------------------------------------------}
+                        
+                        \ControlFlowTok{if}\NormalTok{(detr_impact}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{ }\CommentTok{# detritus impact on select days }
+                          \ControlFlowTok{if}\NormalTok{(day }\OperatorTok{==}\StringTok{ }\NormalTok{detr_impact_days[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{detr_impact_days[}\DecValTok{2}\NormalTok{])\{}
+\NormalTok{                            Env_F =}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(environment[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{pars[}\StringTok{"Det"}\NormalTok{]) }\OperatorTok{*}\StringTok{ }\NormalTok{detr_im}
+\NormalTok{                          \}}
+\NormalTok{                        \}}
+                        \CommentTok{# else\{ # no detritus impact (normal conditions)}
+                        \CommentTok{#     Env_F = ifelse(pars["Det"] == 0, as.numeric(pars["K"]*environment[1]/(environment[1] + (pars["K"] - environment[1])*exp(-pars["r"]*pars["step"]))), as.numeric(environment[1] + pars["Det"]))}
+                        \CommentTok{#   \}}
+                        
+\NormalTok{                        egg <-}\StringTok{ }\DecValTok{0}
+\NormalTok{                      \} }\CommentTok{# end no hosts}
+                      
+                      \CommentTok{# update patch variables }
+                      \KeywordTok{NLCommand}\NormalTok{(}\StringTok{"ask patch 0 0 [set F"}\NormalTok{, Env_F, }\StringTok{"set M"}\NormalTok{, Env_M, }\StringTok{"set Z"}\NormalTok{, Env_Z, }\StringTok{"set G"}\NormalTok{, Env_G[day], }\StringTok{"]"}\NormalTok{)}
+                      
+                      \CommentTok{# @snail_control -------------------------------------------------------------------}
+                      \CommentTok{# kill snail eggs with molluscicide event  }
+                      \ControlFlowTok{if}\NormalTok{(day }\OperatorTok{>}\StringTok{ }\DecValTok{10}\NormalTok{)\{}
+                        \ControlFlowTok{if}\NormalTok{(snail_control}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{ }
+                          \CommentTok{# if(day==me)\{ # for me_pars loop (separate sims per me_event) @hailmary}
+                            \CommentTok{# if(day %% me_day1==0)\{ # @me_day (v. 1.4) (multiple me_events per sim)}
+                            \ControlFlowTok{if}\NormalTok{(day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{1}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{2}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{3}\NormalTok{] }\OperatorTok{|}\StringTok{ }\NormalTok{day }\OperatorTok{==}\StringTok{ }\NormalTok{me_days[}\DecValTok{4}\NormalTok{])\{ }\CommentTok{# @me_day (v. 1.4) (multiple me_events per sim)}
+\NormalTok{                            Env_G[(day }\OperatorTok{-}\StringTok{ }\DecValTok{10}\NormalTok{)}\OperatorTok{:}\NormalTok{(day }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)] <-}\StringTok{ }\KeywordTok{rbinom}\NormalTok{(}\DataTypeTok{n=}\DecValTok{10}\NormalTok{,}\DataTypeTok{size=}\NormalTok{Env_G[(day }\OperatorTok{-}\StringTok{ }\DecValTok{10}\NormalTok{)}\OperatorTok{:}\NormalTok{(day }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)],}\DataTypeTok{prob=}\KeywordTok{exp}\NormalTok{(}\OperatorTok{-}\NormalTok{me_im)) }\CommentTok{# mollusciciding kills eggs for all previous 10 days }
+\NormalTok{                            create_snails <-}\StringTok{ }\KeywordTok{rbinom}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1}\NormalTok{, }\DataTypeTok{size=}\NormalTok{Env_G[day }\OperatorTok{-}\StringTok{ }\DecValTok{10}\NormalTok{], }\DataTypeTok{prob=}\FloatTok{0.5}\NormalTok{) }\CommentTok{# keep normal prob for me day  }
+\NormalTok{                          \}}\ControlFlowTok{else}\NormalTok{\{create_snails <-}\StringTok{ }\KeywordTok{rbinom}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1}\NormalTok{, }\DataTypeTok{size=}\NormalTok{Env_G[day }\OperatorTok{-}\StringTok{ }\DecValTok{10}\NormalTok{], }\DataTypeTok{prob=}\FloatTok{0.5}\NormalTok{)\}}
+\NormalTok{                        \}}\ControlFlowTok{else}\NormalTok{\{create_snails <-}\StringTok{ }\KeywordTok{rbinom}\NormalTok{(}\DataTypeTok{n=}\DecValTok{1}\NormalTok{, }\DataTypeTok{size=}\NormalTok{Env_G[day }\OperatorTok{-}\StringTok{ }\DecValTok{10}\NormalTok{], }\DataTypeTok{prob=}\FloatTok{0.5}\NormalTok{)\}}
+                        \KeywordTok{NLCommand}\NormalTok{(}\StringTok{"create-snails "}\NormalTok{, create_snails, }\StringTok{"[set L 0.75 set ee 0.9 set D 0 set RH 0 set P 0 set RPP 0 set DAM 0 set HAZ 0 set LG 0.75]"}\NormalTok{)}
+\NormalTok{                      \} }\CommentTok{# end create snails}
+                      
+                      \KeywordTok{NLCommand}\NormalTok{(}\StringTok{"go"}\NormalTok{) }\CommentTok{# run @netlogo sim steps}
+                      \CommentTok{#cs[t] <- rbinom(n=1, size=Env_G[day - 10], prob=0.5) # list to check 'create snails' output doesn't produce NAs}
+\NormalTok{                      day =}\StringTok{ }\NormalTok{day }\OperatorTok{+}\StringTok{ }\DecValTok{1} 
+\NormalTok{                      Env_G[}\KeywordTok{is.na}\NormalTok{(Env_G)] <-}\StringTok{ }\DecValTok{0} \CommentTok{# turn NAs to 0 to feed into rbinom function }
+                      \CommentTok{# results outputs}
+\NormalTok{                      cerc_list[t] <-}\StringTok{ }\NormalTok{Env_Z }\CommentTok{# get cercariae density }
+\NormalTok{                      food_list[t] <-}\StringTok{ }\NormalTok{Env_F }\CommentTok{# get food growth}
+\NormalTok{                      juv_list[t] <-}\StringTok{ }\KeywordTok{length}\NormalTok{(}\KeywordTok{which}\NormalTok{(snail.stats}\OperatorTok{$}\NormalTok{RH}\OperatorTok{==}\DecValTok{0}\NormalTok{)) }\CommentTok{# get juvenile hosts}
+\NormalTok{                      adult_list[t] <-}\StringTok{ }\KeywordTok{length}\NormalTok{(}\KeywordTok{which}\NormalTok{(snail.stats}\OperatorTok{$}\NormalTok{RH}\OperatorTok{>}\DecValTok{0}\NormalTok{)) }\CommentTok{# get adult hosts}
+\NormalTok{                      infec_list[t] <-}\StringTok{ }\KeywordTok{length}\NormalTok{(}\KeywordTok{which}\NormalTok{(snail.stats}\OperatorTok{$}\NormalTok{P}\OperatorTok{>}\DecValTok{0}\NormalTok{)) }\CommentTok{# get just infected hosts}
+\NormalTok{                      infec_shed_list[t] <-}\StringTok{ }\KeywordTok{length}\NormalTok{(}\KeywordTok{which}\NormalTok{(snail.stats}\OperatorTok{$}\NormalTok{RP}\OperatorTok{>}\DecValTok{0}\NormalTok{)) }\CommentTok{# get infected hosts that are shedding}
+                      \CommentTok{# get length of infected hosts}
+\NormalTok{                      ish <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(snail.stats,RP}\OperatorTok{>}\DecValTok{0}\NormalTok{) }\CommentTok{# get infected hosts}
+\NormalTok{                      infec_shed_length_list[t] <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(ish}\OperatorTok{$}\NormalTok{L) }\CommentTok{# get their mean length}
+                      
+\NormalTok{                      egg_list[t] <-}\StringTok{ }\NormalTok{egg }\CommentTok{# save to host egg list }
+\NormalTok{                      egg_mean_list[t] <-}\StringTok{ }\NormalTok{eggs_mean }\CommentTok{# get mean eggs in env }
+                      
+                      
+\NormalTok{                    \} }\CommentTok{# --------------------------------------- end nl sim}
+                    
+                    \CommentTok{# turn NULLs into NAs to get numeric values below (14-5-19. error: cannot coerce double)}
+\NormalTok{                    hl_list <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(hl_list, }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{ifelse}\NormalTok{(x }\OperatorTok{==}\StringTok{ "NULL"}\NormalTok{, }\OtherTok{NA}\NormalTok{, x))}
+\NormalTok{                    pmass_list <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(pmass_list, }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{ifelse}\NormalTok{(x }\OperatorTok{==}\StringTok{ "NULL"}\NormalTok{, }\OtherTok{NA}\NormalTok{, x))}
+\NormalTok{                    egg_mean_list <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(egg_mean_list, }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{ifelse}\NormalTok{(x }\OperatorTok{==}\StringTok{ "NaN"}\NormalTok{, }\OtherTok{NA}\NormalTok{, x))}
+\NormalTok{                    infec_shed_length_list <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(infec_shed_length_list, }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{ifelse}\NormalTok{(x }\OperatorTok{==}\StringTok{ "NULL"}\NormalTok{, }\OtherTok{NA}\NormalTok{, x))}
+                    
+                    \CommentTok{# save individual outputs }
+\NormalTok{                    cerc_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(cerc_list) }
+\NormalTok{                    food_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(food_list)}
+\NormalTok{                    juv_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(juv_list)}
+\NormalTok{                    adult_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(adult_list)}
+\NormalTok{                    infec_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(infec_list)}
+\NormalTok{                    infec_shed_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(infec_shed_list)}
+\NormalTok{                    hl_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(hl_list)}
+\NormalTok{                    pmass_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(pmass_list)}
+\NormalTok{                    host_biomass_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(host_biomass_list)}
+\NormalTok{                    egg_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(egg_list)}
+\NormalTok{                    egg_mean_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(egg_mean_list)}
+\NormalTok{                    infec_shed_length_list <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(infec_shed_length_list)}
+                    
+                    \CommentTok{# save master outputs }
+\NormalTok{                    cerc_master[[}\KeywordTok{length}\NormalTok{(cerc_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{cerc_list }\CommentTok{# cerc master list}
+\NormalTok{                    food_master[[}\KeywordTok{length}\NormalTok{(food_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{food_list }\CommentTok{# food master list}
+\NormalTok{                    juv_master[[}\KeywordTok{length}\NormalTok{(juv_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{juv_list }\CommentTok{# juv pop master list}
+\NormalTok{                    adult_master[[}\KeywordTok{length}\NormalTok{(adult_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{adult_list }\CommentTok{# adult pop master list}
+\NormalTok{                    infec_master[[}\KeywordTok{length}\NormalTok{(infec_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{infec_list }\CommentTok{# infected host pop master list}
+\NormalTok{                    infec_shed_master[[}\KeywordTok{length}\NormalTok{(infec_shed_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{infec_shed_list }\CommentTok{# infected shedding host pop master list}
+\NormalTok{                    hl_master[[}\KeywordTok{length}\NormalTok{(hl_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{hl_list }\CommentTok{# host length master}
+\NormalTok{                    pmass_master[[}\KeywordTok{length}\NormalTok{(pmass_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{pmass_list }\CommentTok{# parasite mass master}
+\NormalTok{                    host_biomass_master[[}\KeywordTok{length}\NormalTok{(host_biomass_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{host_biomass_list }\CommentTok{# host biomass master}
+\NormalTok{                    egg_master[[}\KeywordTok{length}\NormalTok{(egg_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{egg_list }\CommentTok{# summed egg master}
+\NormalTok{                    egg_mean_master[[}\KeywordTok{length}\NormalTok{(egg_mean_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{egg_mean_list }\CommentTok{# mean egg master}
+\NormalTok{                    infec_shed_length_master[[}\KeywordTok{length}\NormalTok{(infec_shed_length_master)}\OperatorTok{+}\DecValTok{1}\NormalTok{]] <-}\StringTok{ }\NormalTok{infec_shed_length_list }\CommentTok{# mean infected shedding host length master}
+                    
+                    \ControlFlowTok{if}\NormalTok{(save_to_file}\OperatorTok{==}\DecValTok{1}\NormalTok{)\{}\KeywordTok{dev.off}\NormalTok{()\}}
+\NormalTok{                  \} }\CommentTok{# ----end me_im}
+\NormalTok{                  \} }\CommentTok{# --------------- end mes}
+\NormalTok{                \} }\CommentTok{# ------------------------------ end rgs}
+\NormalTok{              \} }\CommentTok{# --------------------------------------------- end rhos}
+\NormalTok{            \} }\CommentTok{# ----------------------------------------------------------- end alphas}
+\NormalTok{          \} }\CommentTok{# ------------------------------------------------------------------------- end detritus}
+\NormalTok{        \} }\CommentTok{# end hb pars # end sim model}
+        \CommentTok{# ####################################  end netlogo sim ######################################## }
+        
+        \CommentTok{# results output }
+        \CommentTok{# save sim results to dir }
+\NormalTok{        global_output <-}\StringTok{ }\KeywordTok{list}\NormalTok{(cerc_master,food_master,juv_master, adult_master,infec_master,infec_shed_master,hl_master,pmass_master,host_biomass_master, egg_master, egg_mean_master,infec_shed_length_master) }
+        
+        \CommentTok{# turn NaN and NA into 0s}
+\NormalTok{        global_output <-}\StringTok{ }\KeywordTok{rapply}\NormalTok{(global_output, }\DataTypeTok{f=}\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.nan}\NormalTok{(x),}\DecValTok{0}\NormalTok{,x), }\DataTypeTok{how=}\StringTok{"replace"}\NormalTok{ )}
+\NormalTok{        global_output <-}\StringTok{ }\KeywordTok{rapply}\NormalTok{(global_output, }\DataTypeTok{f=}\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(x),}\DecValTok{0}\NormalTok{,x), }\DataTypeTok{how=}\StringTok{"replace"}\NormalTok{ )}
+        
+        \CommentTok{# global_output <- cerc_master # save just cercs}
+        \KeywordTok{saveRDS}\NormalTok{(global_output,global_output_fh) }\CommentTok{# save to dir }
+        \KeywordTok{cat}\NormalTok{(}\StringTok{"Output saved in "}\NormalTok{, global_output_fh)}
+        \CommentTok{# read in saved sim results}
+        \KeywordTok{cat}\NormalTok{(}\StringTok{"order = cerc, food, juv, adult, infected, infected shedding, mean host length, mean parasite mass, summed host biomass"}\NormalTok{, }\StringTok{"mean host eggs"}\NormalTok{, }\StringTok{"infected host length"}\NormalTok{)}
+        
+      \CommentTok{# \} # ---------------------- end me_pars sim runs @hailmary}
+\NormalTok{    \} }\CommentTok{# ---------------------- end me_event sim runs}
+\NormalTok{  \} }\CommentTok{#  --------------------- end me_im_event sims}
+
+\NormalTok{\} }\CommentTok{#  ---------------------- end rep_num loop}
+
+\CommentTok{# ------------------------- plot individual outputs -------------------------}
+
+\NormalTok{mm_ =}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(global_output_fh)}
+\NormalTok{mains <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"cercs"}\NormalTok{,}\StringTok{"food"}\NormalTok{,}\StringTok{"juv"}\NormalTok{,}\StringTok{"adult"}\NormalTok{,}\StringTok{""}\NormalTok{,}\StringTok{"infec (shed)"}\NormalTok{,}\KeywordTok{rep}\NormalTok{(}\StringTok{""}\NormalTok{,}\DecValTok{3}\NormalTok{),}\StringTok{"sum host eggs"}\NormalTok{,}\StringTok{"mean host eggs"}\NormalTok{,}\StringTok{"infec host length"}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{),}\DataTypeTok{las=}\DecValTok{1}\NormalTok{,}\DataTypeTok{bty=}\StringTok{"n"}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{12}\NormalTok{))\{}
+  \KeywordTok{plot}\NormalTok{(mm_[[i]][[}\DecValTok{1}\NormalTok{]],}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{,}\DataTypeTok{main=}\NormalTok{mains[i]) }
+\NormalTok{\}}
+
+\CommentTok{# NLQuit()}
+
+
+\NormalTok{#################################################################################################}
+\NormalTok{##########################################  end body ############################################ }
+\NormalTok{#################################################################################################}
+\end{Highlighting}
+\end{Shaded}
+
+End Appendix
+
+\printbibliography
+
+\end{document}
