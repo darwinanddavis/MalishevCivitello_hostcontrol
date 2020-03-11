@@ -292,28 +292,11 @@ summary {
 <p>   </p>
 <p>Simulation model code</p>
 <p>   </p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test.java &lt;-<span class="st"> </span><span class="dv">0</span> <span class="co"># 1 = run java diagnostics  </span>
-
-<span class="co"># run java test  </span>
-<span class="kw">install.packages</span>(<span class="st">&quot;RCurl&quot;</span>)
-<span class="kw">require</span>(RCurl)
-<span class="cf">if</span>(test.java<span class="op">==</span><span class="dv">1</span>){
-  <span class="kw">require</span>(RCurl)
-  script &lt;-<span class="st"> </span><span class="kw">getURL</span>(<span class="st">&quot;https://raw.githubusercontent.com/darwinanddavis/SchistoIBM/master/mac/java_test.R&quot;</span>, <span class="dt">ssl.verifypeer =</span> <span class="ot">FALSE</span>)
-  <span class="kw">eval</span>(<span class="kw">parse</span>(<span class="dt">text =</span> script))
-  <span class="co"># check rJava version  </span>
-  <span class="kw">.jinit</span>()
-  <span class="kw">.jcall</span>(<span class="st">&quot;java/lang/System&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;getProperty&quot;</span>, <span class="st">&quot;java.runtime.version&quot;</span>)
-  <span class="co"># get latest Java/Oracle version: https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html  </span>
-  
-}
-<span class="co"># :three: [GCC compiler in R (unconfirmed)](https://stackoverflow.com/questions/1616983/building-r-packages-using-alternate-gcc)</span>
-<span class="co"># [Running Netlogo 6.0.+](https://github.com/NetLogo/NetLogo/issues/1282)</span>
-
-#################################  Running NetLogo in Mac ##################################
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">#################################  Running NetLogo in Mac ##################################
 <span class="co"># if using Mac OSX El Capitan+ and not already in JQR, download and open JGR</span>
 <span class="co"># OR</span>
 <span class="co"># run netlogo model without gui (see toggle below)</span>
+
 mac &lt;-<span class="st"> </span><span class="dv">0</span>
 
 <span class="cf">if</span>(mac<span class="op">==</span><span class="dv">1</span>){
@@ -386,18 +369,7 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(Matrix,deSolve,mv
 ppp &lt;-<span class="st"> </span><span class="kw">lapply</span>(packages,require,<span class="dt">character.only=</span>T)
 <span class="kw">names</span>(ppp) &lt;-<span class="st"> </span>packages
 <span class="cf">if</span>(<span class="kw">any</span>(ppp<span class="op">==</span>F)){<span class="kw">cbind</span>(packages,ppp);<span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n\n\n</span><span class="st"> ---&gt; Check packages are loaded properly &lt;--- </span><span class="ch">\n\n\n</span><span class="st">&quot;</span>)}
-
-
 cs &lt;-<span class="st"> </span><span class="kw">list</span>() <span class="co"># diagnostics list for checking NAs in create snails command  </span>
-
-<span class="co"># load plot function </span>
-script &lt;-<span class="st"> </span><span class="kw">getURL</span>(<span class="st">&quot;https://raw.githubusercontent.com/darwinanddavis/plot_it/master/plot_it.R&quot;</span>, <span class="dt">ssl.verifypeer =</span> <span class="ot">FALSE</span>)
-<span class="kw">eval</span>(<span class="kw">parse</span>(<span class="dt">text =</span> script))
-<span class="kw">display.brewer.all</span>()
-<span class="co"># Set global plotting parameters</span>
-<span class="kw">cat</span>(<span class="st">&quot;plot_it( </span><span class="ch">\n</span><span class="st">0 for presentation, 1 for manuscript, </span><span class="ch">\n</span><span class="st">set colour for background, </span><span class="ch">\n</span><span class="st">set colour palette 1. use 'display.brewer.all()', </span><span class="ch">\n</span><span class="st">set colour palette 2. use 'display.brewer.all()', </span><span class="ch">\n</span><span class="st">set alpha for colour transperancy, </span><span class="ch">\n</span><span class="st">set font style </span><span class="ch">\n</span><span class="st">)&quot;</span>)
-<span class="kw">plot_it</span>(<span class="dv">1</span>,<span class="st">&quot;black&quot;</span>,<span class="st">&quot;YlOrRd&quot;</span>,<span class="st">&quot;Greens&quot;</span>,<span class="dv">1</span>,<span class="st">&quot;mono&quot;</span>) <span class="co"># set plot function params       </span>
-<span class="kw">plot_it_gg</span>(<span class="st">&quot;white&quot;</span>,<span class="st">&quot;black&quot;</span>) <span class="co"># specify background and foreground colours for ggplot     </span>
 
 ################################  compile packages and load files ###################################
 
@@ -483,7 +455,7 @@ pars[<span class="st">&quot;Fh&quot;</span>] =<span class="st"> </span><span cla
 pars[<span class="st">&quot;ENV&quot;</span>] =<span class="st"> </span><span class="dv">500</span> <span class="co"># Units: L</span>
 pars[<span class="st">&quot;r&quot;</span>] =<span class="st"> </span><span class="dv">1</span>   <span class="co"># Units: day-1</span>
 pars[<span class="st">&quot;step&quot;</span>] =<span class="st"> </span><span class="dv">1</span>  <span class="co"># Units: day</span>
-pars[<span class="st">&quot;epsilon&quot;</span>] =<span class="st"> </span><span class="dv">20</span> <span class="co"># Units: L host-1, day-1 (Rounded estimate from Civitello and Rohr)</span>
+pars[<span class="st">&quot;epsilon&quot;</span>] =<span class="st"> </span><span class="dv">20</span> <span class="co"># Units: L host-1, day-1 </span>
 pars[<span class="st">&quot;sigma&quot;</span>] =<span class="st"> </span><span class="fl">0.5</span> 
 pars[<span class="st">&quot;m_M&quot;</span>] =<span class="st"> </span><span class="dv">1</span>   <span class="co"># Units: day-1</span>
 pars[<span class="st">&quot;m_Z&quot;</span>] =<span class="st"> </span><span class="dv">1</span>   <span class="co"># Units: day-1</span>

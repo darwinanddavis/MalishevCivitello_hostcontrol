@@ -46,7 +46,6 @@ params:
   date: !r Sys.Date()
   session: !r sessionInfo()  
   version: !r getRversion()
-  email: "matthew.malishev@gmail.com"
   doi: ""
 classoption: portrait
 ---
@@ -105,28 +104,12 @@ Simulation model code
 \  
 
 ```{r, eval=F, echo=T}
-test.java <- 0 # 1 = run java diagnostics  
-
-# run java test  
-install.packages("RCurl")
-require(RCurl)
-if(test.java==1){
-  require(RCurl)
-  script <- getURL("https://raw.githubusercontent.com/darwinanddavis/SchistoIBM/master/mac/java_test.R", ssl.verifypeer = FALSE)
-  eval(parse(text = script))
-  # check rJava version  
-  .jinit()
-  .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
-  # get latest Java/Oracle version: https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html  
-  
-}
-# :three: [GCC compiler in R (unconfirmed)](https://stackoverflow.com/questions/1616983/building-r-packages-using-alternate-gcc)
-# [Running Netlogo 6.0.+](https://github.com/NetLogo/NetLogo/issues/1282)
 
 #################################  Running NetLogo in Mac ##################################
 # if using Mac OSX El Capitan+ and not already in JQR, download and open JGR
 # OR
 # run netlogo model without gui (see toggle below)
+
 mac <- 0
 
 if(mac==1){
@@ -199,18 +182,7 @@ require(rJava,RNetLogo)
 ppp <- lapply(packages,require,character.only=T)
 names(ppp) <- packages
 if(any(ppp==F)){cbind(packages,ppp);cat("\n\n\n ---> Check packages are loaded properly <--- \n\n\n")}
-
-
 cs <- list() # diagnostics list for checking NAs in create snails command  
-
-# load plot function 
-script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/master/plot_it.R", ssl.verifypeer = FALSE)
-eval(parse(text = script))
-display.brewer.all()
-# Set global plotting parameters
-cat("plot_it( \n0 for presentation, 1 for manuscript, \nset colour for background, \nset colour palette 1. use 'display.brewer.all()', \nset colour palette 2. use 'display.brewer.all()', \nset alpha for colour transperancy, \nset font style \n)")
-plot_it(1,"black","YlOrRd","Greens",1,"mono") # set plot function params       
-plot_it_gg("white","black") # specify background and foreground colours for ggplot     
 
 ################################  compile packages and load files ###################################
 
@@ -296,7 +268,7 @@ pars["Fh"] = 2 # f_scaled (for v.1.1)
 pars["ENV"] = 500 # Units: L
 pars["r"] = 1   # Units: day-1
 pars["step"] = 1  # Units: day
-pars["epsilon"] = 20 # Units: L host-1, day-1 (Rounded estimate from Civitello and Rohr)
+pars["epsilon"] = 20 # Units: L host-1, day-1 
 pars["sigma"] = 0.5 
 pars["m_M"] = 1   # Units: day-1
 pars["m_Z"] = 1   # Units: day-1
