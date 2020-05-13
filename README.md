@@ -1,6 +1,6 @@
 <!-- <img src="https://raw.githubusercontent.com/darwinanddavis/MalishevCivitello_hostcontrol/master/header.jpg" alt=" " width=1000 height=500>    -->  
 
-![https://zenodo.org/badge/DOI/10.5281/zenodo.3823824.svg](https://zenodo.org/record/3823824#.XrubRBMzYWo)    
+doi:[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3823824.svg)](https://zenodo.org/record/3823824#.XrubRBMzYWo)  
 
 # Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes   
 
