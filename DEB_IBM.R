@@ -295,6 +295,26 @@ NLLoadModel(paste0(model.path,nl.model),nl.obj=NULL) # load model
 
 # run model from here --------------------------------------------------------------
 
+# ~~~~~~ user input --------------------------------------------------------------
+
+# for hailmary
+# snail_control <- 1
+# hailmary <- 1
+# for(me_im_event in 4){ ... }
+# for(me_event in 8){ ... }
+# enable for(me in me_pars){ ... } (line 613) and closing bracket
+# disable me_pars loop in sim model and closing bracket
+# enable three @hailmary instances in sim model
+
+# for all snail control events
+# snail_control <- 1
+# hailmary <- 0
+# for(me_im_event in 1:5){ ... }
+# for(me_event in 1:7){ ... }
+# disable for(me in me_pars){ ... } (line 613) and closing bracket
+# enable me_pars loop in sim model and closing bracket
+# disable three @hailmary instances in sim model
+
 resource_type = "algae"
 # algae params
 rg_pars <- 0.5 # resource growth rates (rs)
