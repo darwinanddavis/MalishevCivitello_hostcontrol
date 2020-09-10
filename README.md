@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/darwinanddavis/MalishevCivitello_hostcontrol/master/img/header.jpg" alt=" " width=1000 height=500>     
+<img src="https://raw.githubusercontent.com/darwinanddavis/MalishevCivitello_hostcontrol/master/img/header.jpg" alt=" " width=1000 height=400>     
 
 doi:[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3823824.svg)](https://zenodo.org/record/3823824#.XrubRBMzYWo)  
 
